@@ -7,14 +7,13 @@ export function Carousel(): JSX.Element {
         return (
             <div
                 key={index}
-                className="relative w-[470px] h-[230px] inline-block"
+                className="relative w-[470px] h-[230px] inline-block flex-nowrap"
             >
                 <Image
                     src={`/${photo.thumbnail.trending?.small}`}
                     alt="thumb-image"
                     layout="fill"
                     objectFit="cover"
-                    priority
                 />
             </div>
         )
@@ -22,7 +21,7 @@ export function Carousel(): JSX.Element {
 
     return (
         <>
-            <div className="">{carouselPhotos}</div>
+            <div className="overflow-x-auto ">{carouselPhotos}</div>
         </>
     )
 }

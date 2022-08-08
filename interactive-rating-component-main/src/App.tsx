@@ -1,18 +1,34 @@
 import { useState } from 'react'
+import Submit from './components/Submit'
 
-type buttonProps ={
-    toggle: boolean,
-    buttonText: string,
+type buttonProps = {
+    toggle: boolean
+    buttonText: string
 }
 
 function App(): JSX.Element {
-    const [toggleButton1, setToggleButton1] = useState<buttonProps>({toggle: false, buttonText: "1"})
-    const [toggleButton2, setToggleButton2] = useState<buttonProps>({toggle: false, buttonText: "2"})
-    const [toggleButton3, setToggleButton3] = useState<buttonProps>({toggle: false, buttonText: "3"})
-    const [toggleButton4, setToggleButton4] = useState<buttonProps>({toggle: false, buttonText: "4"})
-    const [toggleButton5, setToggleButton5] = useState<buttonProps>({toggle: false, buttonText: "6"})
-
-    return (
+    const [button1, setButton1] = useState<buttonProps>({
+        toggle: false,
+        buttonText: '1',
+    })
+    const [button2, setButton2] = useState<buttonProps>({
+        toggle: false,
+        buttonText: '2',
+    })
+    const [button3, setButton3] = useState<buttonProps>({
+        toggle: false,
+        buttonText: '3',
+    })
+    const [button4, setButton4] = useState<buttonProps>({
+        toggle: false,
+        buttonText: '4',
+    })
+    const [button5, setButton5] = useState<buttonProps>({
+        toggle: false,
+        buttonText: '5',
+    })
+    const [handleSubmit, setHandleSubmit] = useState<boolean>(true)
+    return handleSubmit ? (
         <div className="h-screen flex flex-col justify-center items-center">
             <div className="w-[380px] h-auto bg-[#202731] p-9 rounded-3xl">
                 <div className="bg-[#252f3a] rounded-full p-3 w-fit">
@@ -26,55 +42,84 @@ function App(): JSX.Element {
                 <div className="flex justify-between mt-6 text-[#737083] text-[15px]">
                     <button
                         className={`${
-                            toggleButton1
+                            button1.toggle
                                 ? 'bg-gray-300 text-white'
                                 : 'bg-[#252f3a]'
                         } rounded-full w-10 h-10`}
-                        onClick={(): void => {setToggleButton1(...toggleButton1,!toggleButton1.toggle)}}
-                    >}
-                    </button>
-                    <button
-                        className={`${
-                            toggleButton2
-                                ? 'bg-gray-300 text-white'
-                                : 'bg-[#252f3a]'
-                        } rounded-full w-10 h-10`}
-                        onClick={(): void => setToggleButton2(!toggleButton2)}
+                        onClick={() =>
+                            setButton1((prevButton1) => ({
+                                ...prevButton1,
+                                toggle: !prevButton1.toggle,
+                            }))
+                        }
                     >
-                        2
+                        {button1.buttonText}
                     </button>
                     <button
                         className={`${
-                            toggleButton3
+                            button2.toggle
                                 ? 'bg-gray-300 text-white'
                                 : 'bg-[#252f3a]'
                         } rounded-full w-10 h-10`}
-                        onClick={(): void => setToggleButton3(!toggleButton3)}
+                        onClick={() =>
+                            setButton2((prevButton2) => ({
+                                ...prevButton2,
+                                toggle: !prevButton2.toggle,
+                            }))
+                        }
                     >
-                        3
+                        {button2.buttonText}
                     </button>
                     <button
                         className={`${
-                            toggleButton4
+                            button3.toggle
                                 ? 'bg-gray-300 text-white'
                                 : 'bg-[#252f3a]'
                         } rounded-full w-10 h-10`}
-                        onClick={(): void => setToggleButton4(!toggleButton4)}
+                        onClick={() =>
+                            setButton3((prevButton3) => ({
+                                ...prevButton3,
+                                toggle: !prevButton3.toggle,
+                            }))
+                        }
                     >
-                        4
+                        {button3.buttonText}
                     </button>
                     <button
                         className={`${
-                            toggleButton5
+                            button4.toggle
+                                ? 'bg-gray-300 text-white'
+                                : 'bg-[#252f3a]'
+                        } rounded-full w-10 h-10`}
+                        onClick={() =>
+                            setButton4((prevButton4) => ({
+                                ...prevButton4,
+                                toggle: !prevButton4.toggle,
+                            }))
+                        }
+                    >
+                        {button4.buttonText}
+                    </button>
+                    <button
+                        className={`${
+                            button5.toggle
                                 ? 'bg-orange-500 text-white'
                                 : 'bg-[#252f3a]'
                         } rounded-full w-10 h-10`}
-                        onClick={(): void => setToggleButton5(!toggleButton5)}
+                        onClick={(): void =>
+                            setButton5((prevButton5) => ({
+                                ...prevButton5,
+                                toggle: !prevButton5.toggle,
+                            }))
+                        }
                     >
-                        5
+                        {button5.buttonText}
                     </button>
                 </div>
-                <button className="bg-white rounded-full w-full mt-7 p-2 text-orange-500">
+                <button
+                    className="bg-white rounded-full w-full mt-7 p-2 text-orange-500"
+                    onClick={(): void => setHandleSubmit(!handleSubmit)}
+                >
                     S U B M I T
                 </button>
             </div>
@@ -97,6 +142,8 @@ function App(): JSX.Element {
                 .
             </div>
         </div>
+    ) : (
+        <Submit submitText={button5.buttonText} />
     )
 }
 

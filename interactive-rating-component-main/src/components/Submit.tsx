@@ -4,7 +4,7 @@ type submitProps = {
     submitText: string
 }
 
-function Submit({ submitText }: submitProps): JSX.Element {
+export default function Submit({ submitText }: submitProps): JSX.Element {
     return (
         <div className="h-screen flex flex-col justify-center items-center">
             <div className="w-[380px] h-auto bg-[#202731] p-8 rounded-3xl ">
@@ -44,5 +44,3 @@ function Submit({ submitText }: submitProps): JSX.Element {
         </div>
     )
 }
-
-export default Submit

@@ -1,4 +1,3 @@
-import { SetStateAction } from 'jotai'
 import { useState } from 'react'
 
 type buttonProps = {
@@ -41,12 +40,12 @@ export default function Rating({
     })
     return (
         <div className="h-screen flex flex-col justify-center items-center">
-            <div className="w-[380px] h-auto bg-[#202731] p-9 rounded-3xl">
+            <div className="sm:w-[380px] w-[87%] h-auto bg-[#232831] sm:p-9 p-6 rounded-2xl sm:rounded-3xl">
                 <div className="bg-[#252f3a] rounded-full p-3 w-fit">
                     <img src="assets/icon-star.svg" alt="star-icon"></img>
                 </div>
-                <h1 className="text-white text-xl mb-2 mt-7">How did we do?</h1>
-                <p className="text-[#737083] text-[15px]">
+                <h1 className="text-white text-xl mb-2 mt-4">How did we do?</h1>
+                <p className="text-[#7c8798] text-[13px]">
                     Please let us know how we did with your support request. All
                     feedback is appreciated to help us improve our offering!
                 </p>
@@ -153,7 +152,7 @@ export default function Rating({
                     </button>
                 </div>
                 <button
-                    className="bg-white rounded-full w-full mt-7 p-2 text-orange-500"
+                    className="hover:bg-white bg-orange-500 rounded-full w-full mt-5 p-2 text-white hover:text-orange-500"
                     onClick={(): void => togglerChanger(!toggleState)}
                 >
                     S U B M I T

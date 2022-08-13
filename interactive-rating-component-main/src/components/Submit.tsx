@@ -7,9 +7,9 @@ type submitProps = {
 export default function Submit({ submitText }: submitProps): JSX.Element {
     return (
         <div className="h-screen flex flex-col justify-center items-center">
-            <div className="w-[380px] h-auto bg-[#202731] p-8 rounded-3xl ">
+            <div className="sm:w-[380px] w-[89%] h-auto bg-[#202731] sm:p-8 p-8 sm:rounded-3xl rounded-2xl ">
                 <img
-                    className="mx-auto mb-8"
+                    className="mx-auto mb-6 w-6/12"
                     src="assets/illustration-thank-you.svg"
                     alt="thank-you-img"
                 />
@@ -17,7 +17,7 @@ export default function Submit({ submitText }: submitProps): JSX.Element {
                 <h1 className="text-white text-xl mb-2 mt-7 text-center">
                     Thank you!
                 </h1>
-                <p className="text-[#737083] text-[15px] text-center">
+                <p className="text-[#7c8798] text-[13px] text-center">
                     We appreciate you taking the time to give a rating. If you
                     ever need more support, don't hesitate to get in touch!
                 </p>

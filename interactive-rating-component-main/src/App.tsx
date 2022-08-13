@@ -8,7 +8,7 @@ function App(): JSX.Element {
 
     return handleSubmit ? (
         <Rating
-            togglerChanger={setHandleSubmit}
+            toggleChange={setHandleSubmit}
             toggleState={handleSubmit}
             valueOfButton={value}
             setValueOfButton={setValue}

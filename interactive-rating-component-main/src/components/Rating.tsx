@@ -6,14 +6,14 @@ type buttonProps = {
 }
 
 type RatingProps = {
-    toggleChanger: React.Dispatch<React.SetStateAction<boolean>>
+    toggleChange: React.Dispatch<React.SetStateAction<boolean>>
     toggleState: boolean
     valueOfButton: string
     setValueOfButton: React.Dispatch<React.SetStateAction<string>>
 }
 
 export default function Rating({
-    toggleChanger,
+    toggleChange,
     toggleState,
     valueOfButton,
     setValueOfButton,
@@ -163,7 +163,7 @@ export default function Rating({
                 </div>
                 <button
                     className="hover:bg-white bg-orange-500 rounded-full w-full mt-5 p-2 text-white hover:text-orange-500"
-                    onClick={(): void => toggleChanger(!toggleState)}
+                    onClick={(): void => toggleChange(!toggleState)}
                     disabled={isDisabled()}
                 >
                     S U B M I T

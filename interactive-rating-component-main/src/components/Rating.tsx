@@ -6,14 +6,14 @@ type buttonProps = {
 }
 
 type RatingProps = {
-    togglerChanger: React.Dispatch<React.SetStateAction<boolean>>
+    toggleChanger: React.Dispatch<React.SetStateAction<boolean>>
     toggleState: boolean
     valueOfButton: string
     setValueOfButton: React.Dispatch<React.SetStateAction<string>>
 }
 
 export default function Rating({
-    togglerChanger,
+    toggleChanger,
     toggleState,
     valueOfButton,
     setValueOfButton,
@@ -38,6 +38,16 @@ export default function Rating({
         toggle: false,
         buttonText: '5',
     })
+
+    const isDisabled = () => {
+        if(!button1.toggle && !button2.toggle && !button3.toggle && !button4.toggle && !button5.toggle){
+            return true
+        }else{
+            return false
+        }
+    }
+
+    console.log(isDisabled())
     return (
         <div className="h-screen flex flex-col justify-center items-center">
             <div className="sm:w-[380px] w-[87%] h-auto bg-[#232831] sm:p-9 p-6 rounded-2xl sm:rounded-3xl">
@@ -153,7 +163,8 @@ export default function Rating({
                 </div>
                 <button
                     className="hover:bg-white bg-orange-500 rounded-full w-full mt-5 p-2 text-white hover:text-orange-500"
-                    onClick={(): void => togglerChanger(!toggleState)}
+                    onClick={(): void => toggleChanger(!toggleState)}
+                    disabled={isDisabled()}
                 >
                     S U B M I T
                 </button>

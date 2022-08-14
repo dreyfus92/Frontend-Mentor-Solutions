@@ -30,16 +30,12 @@ export const App = () => {
         </div>
         <div>
           <div>
-            <img
-              src="assets/icon-search.svg"
-              alt="search-icon"
-              className="relative"
-            />
+            <img src="assets/icon-search.svg" alt="search-icon" className="" />
           </div>
           <input
             type="text"
             placeholder="Search GitHub username..."
-            className="flex justify-between items-center py-[22px] bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)]"
+            className="w-full py-[22px] bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)]"
           />
         </div>
       </div>

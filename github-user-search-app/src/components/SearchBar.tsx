@@ -8,7 +8,7 @@ export const SearchBar = ({ setGitUser }: SearchBarProps) => {
   const [user, setUser] = useState("");
   return (
     <div className="relative block group">
-      <span className="absolute top-[21px] -left-1 flex items-center pl-4">
+      <span className="absolute top-[21px] -left-[6px] flex items-center pl-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24">
           <path
             fill="#0079ff"
@@ -25,13 +25,13 @@ export const SearchBar = ({ setGitUser }: SearchBarProps) => {
         <input
           type="text"
           name="search"
-          placeholder="Search GitHub username..."
+          placeholder="Search GitHub username…"
           onChange={(e) => setUser(e.target.value)}
-          className="w-full h-auto block pl-[10%] py-[22px] placeholder:text-[13px] placeholder:leading-6 bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)]"
+          className="w-full h-auto block pl-[13%] py-[22px] placeholder:text-[13px] placeholder:leading-6 bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)]"
         />
         <button
           type="submit"
-          className="absolute bottom-2 -right-0.5 bg-[#0079FF] py-[13px] px-[23px] text-base text-white mr-[10px] rounded-[10px]"
+          className="absolute bottom-2 -right-0.5 bg-[#0079FF] py-[12.5px] px-[15px] text-base text-white mr-[10px] rounded-[10px]"
         >
           Search
         </button>

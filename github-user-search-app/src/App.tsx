@@ -2,8 +2,23 @@ import { useEffect, useState } from "react";
 import { SearchBar } from "./components/SearchBar";
 import { Card } from "./components/Card";
 
+export type userData = {
+  avatar_url: string;
+  bio: string | null;
+  blog: string;
+  company: string | null;
+  created_at: string;
+  email: string | null;
+  followers: number;
+  following: number;
+  location: string | null;
+  login: string | null | undefined;
+  name: string;
+  twitter_username: string;
+};
+
 export const App = () => {
-  const [gitUser, setGitUser] = useState<string>("octacat");
+  const [gitUser, setGitUser] = useState<string>("");
   const [userData, setUserData] = useState<{}>({});
   const [isDark, setIsDark] = useState<boolean>(false);
 
@@ -15,12 +30,14 @@ export const App = () => {
     };
     fetchUser(gitUser).catch(console.error);
   }, [gitUser]);
+
   console.log(userData);
+  // @ts-ignore
   return (
     <div className="flex h-screen justify-center items-center bg-[#F6F8FF]">
       <div className="w-[327px]">
         <div className="flex justify-between mb-[36px]">
-          <h1>devfinder</h1>
+          <h1 className="font-bold text-[26px]">devfinder</h1>
           {!isDark ? (
             <button
               className="group flex items-center text-[#697C9A] hover:text-black fill-[#697C9A] "
@@ -54,7 +71,7 @@ export const App = () => {
           )}
         </div>
         <SearchBar setGitUser={setGitUser} />
-        <Card />
+        <Card userData={userData} />
       </div>
     </div>
   );

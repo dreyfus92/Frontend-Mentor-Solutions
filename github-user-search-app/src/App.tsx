@@ -14,12 +14,13 @@ export type userData = {
   location: string | null;
   login: string | null | undefined;
   name: string;
+  public_repos: string;
   twitter_username: string;
 };
 
 export const App = () => {
-  const [gitUser, setGitUser] = useState<string>("");
-  const [userData, setUserData] = useState<{}>({});
+  const [gitUser, setGitUser] = useState<string>("dreyfus92");
+  const [userData, setUserData] = useState({});
   const [isDark, setIsDark] = useState<boolean>(false);
 
   useEffect(() => {

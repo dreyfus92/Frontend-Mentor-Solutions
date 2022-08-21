@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 interface SearchBarProps {
   setGitUser: React.Dispatch<React.SetStateAction<string>>;
+  isDark: boolean;
 }
 
-export const SearchBar = ({ setGitUser }: SearchBarProps) => {
+export const SearchBar = ({ setGitUser, isDark }: SearchBarProps) => {
   const [user, setUser] = useState("");
   return (
     <div className="relative block group">
@@ -27,7 +28,9 @@ export const SearchBar = ({ setGitUser }: SearchBarProps) => {
           name="search"
           placeholder="Search GitHub username…"
           onChange={(e) => setUser(e.target.value)}
-          className="w-full h-auto block pl-[13%] py-[22px] placeholder:text-[13px] placeholder:leading-6 bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)]"
+          className={`w-full h-auto block pl-[13%] py-[22px] placeholder:text-[13px] placeholder:leading-6 rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)] ${
+            isDark ? "bg-[#1E2A47]" : "bg-white"
+          }`}
         />
         <button
           type="submit"

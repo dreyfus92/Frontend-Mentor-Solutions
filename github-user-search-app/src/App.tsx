@@ -19,7 +19,7 @@ export type userData = {
 };
 
 export const App = () => {
-  const [gitUser, setGitUser] = useState<string>("dreyfus92");
+  const [gitUser, setGitUser] = useState<string>("Octocat");
   const [userData, setUserData] = useState({});
   const [isDark, setIsDark] = useState<boolean>(false);
 
@@ -32,13 +32,17 @@ export const App = () => {
     fetchUser(gitUser).catch(console.error);
   }, [gitUser]);
 
-  console.log(userData);
-  // @ts-ignore
   return (
-    <div className="flex h-screen justify-center items-center bg-[#F6F8FF]">
+    <div
+      className={`flex h-screen justify-center items-center ${
+        isDark ? "bg-[#141D2F]" : "bg-[#F6F8FF]"
+      }`}
+    >
       <div className="w-[327px]">
         <div className="flex justify-between mb-[36px]">
-          <h1 className="font-bold text-[26px]">devfinder</h1>
+          <h1 className={`font-bold text-[26px] ${isDark ? "text-white" : ""}`}>
+            devfinder
+          </h1>
           {!isDark ? (
             <button
               className="group flex items-center text-[#697C9A] hover:text-black fill-[#697C9A] "
@@ -71,7 +75,7 @@ export const App = () => {
             </button>
           )}
         </div>
-        <SearchBar setGitUser={setGitUser} />
+        <SearchBar setGitUser={setGitUser} isDark={isDark} />
         <Card userData={userData} />
       </div>
     </div>

@@ -28,8 +28,10 @@ export const SearchBar = ({ setGitUser, isDark }: SearchBarProps) => {
           name="search"
           placeholder="Search GitHub username…"
           onChange={(e) => setUser(e.target.value)}
-          className={`w-full h-auto block pl-[13%] py-[22px] placeholder:text-[13px] placeholder:leading-6 rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)] ${
-            isDark ? "bg-[#1E2A47]" : "bg-white"
+          className={`w-full h-auto block pl-[13%] py-[22px] placeholder:text-[13px] placeholder:leading-6 rounded-[15px] ${
+            isDark
+              ? "bg-[#1E2A47] placeholder:text-white text-white"
+              : "bg-white shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)]"
           }`}
         />
         <button

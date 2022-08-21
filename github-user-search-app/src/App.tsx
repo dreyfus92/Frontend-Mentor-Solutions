@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { SearchBar } from "./components/SearchBar";
 import { Card } from "./components/Card";
 
-export type userData = {
+export type gitHubData = {
   avatar_url: string;
   bio: string | null;
   blog: string;
@@ -20,7 +20,7 @@ export type userData = {
 
 export const App = () => {
   const [gitUser, setGitUser] = useState<string>("Octocat");
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState<{}>({});
   const [isDark, setIsDark] = useState<boolean>(false);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ export const App = () => {
           )}
         </div>
         <SearchBar setGitUser={setGitUser} isDark={isDark} />
-        <Card userData={userData} />
+        <Card userData={userData} isDark={isDark} />
       </div>
     </div>
   );

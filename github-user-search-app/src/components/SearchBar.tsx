@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import { gitHubData } from "../App";
 
 interface SearchBarProps {
   setGitUser: React.Dispatch<React.SetStateAction<string>>;
   isDark: boolean;
+  userData: gitHubData;
 }
 
-export const SearchBar = ({ setGitUser, isDark }: SearchBarProps) => {
+export const SearchBar = ({ setGitUser, isDark, userData }: SearchBarProps) => {
   const [user, setUser] = useState("");
   return (
     <div className="relative block group">
-      <span className="absolute top-[21px] -left-[6px] flex items-center pl-4">
+      <span className="absolute top-[21px] -left-[6px] sm:top-[22px] sm:left-[14px] md:top-[22px] md:left-[16px] flex items-center pl-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24">
           <path
             fill="#0079ff"
@@ -28,7 +30,7 @@ export const SearchBar = ({ setGitUser, isDark }: SearchBarProps) => {
           name="search"
           placeholder="Search GitHub username…"
           onChange={(e) => setUser(e.target.value)}
-          className={`w-full h-auto block pl-[13%] py-[22px] placeholder:text-[13px] placeholder:leading-6 rounded-[15px] ${
+          className={`w-full h-auto block pl-[13%] py-[22px] hover:cursor-pointer placeholder:text-[13px] sm:placeholder:text-[18px] placeholder:leading-6 rounded-[15px] ${
             isDark
               ? "bg-[#1E2A47] placeholder:text-white text-white"
               : "bg-white shadow-[0_16px_30px_-10px_rgba(70,96,187,0.198567)]"
@@ -40,6 +42,13 @@ export const SearchBar = ({ setGitUser, isDark }: SearchBarProps) => {
         >
           Search
         </button>
+        {window.innerWidth >= 1440 && (
+          <p className="md:absolute md:bottom-6 md:right-[120px] md:text-[#F74646]">
+            {userData.login === null || userData.login === undefined
+              ? "No results"
+              : ""}
+          </p>
+        )}
       </form>
     </div>
   );

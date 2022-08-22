@@ -8,19 +8,17 @@ export type gitHubData = {
   blog: string;
   company: string | null;
   created_at: string;
-  email: string | null;
   followers: number;
   following: number;
   location: string | null;
   login: string | null | undefined;
   name: string;
   public_repos: string;
-  twitter_username: string;
+  twitter_username: string | null;
 };
-
 export const App = () => {
   const [gitUser, setGitUser] = useState<string>("Octocat");
-  const [userData, setUserData] = useState<{}>({});
+  const [userData, setUserData] = useState({});
   const [isDark, setIsDark] = useState<boolean>(false);
 
   useEffect(() => {
@@ -31,14 +29,14 @@ export const App = () => {
     };
     fetchUser(gitUser).catch(console.error);
   }, [gitUser]);
-
+  console.log(userData);
   return (
     <div
       className={`flex h-screen justify-center items-center ${
         isDark ? "bg-[#141D2F]" : "bg-[#F6F8FF]"
       }`}
     >
-      <div className="w-[327px]">
+      <div className="w-[327px] sm:w-[573px] md:w-[730px]">
         <div className="flex justify-between mb-[36px]">
           <h1 className={`font-bold text-[26px] ${isDark ? "text-white" : ""}`}>
             devfinder
@@ -75,8 +73,17 @@ export const App = () => {
             </button>
           )}
         </div>
-        <SearchBar setGitUser={setGitUser} isDark={isDark} />
-        <Card userData={userData} isDark={isDark} />
+        <SearchBar
+          setGitUser={setGitUser}
+          isDark={isDark}
+          // @ts-ignore
+          userData={userData}
+        />
+        <Card
+          // @ts-ignore
+          userData={userData}
+          isDark={isDark}
+        />
       </div>
     </div>
   );

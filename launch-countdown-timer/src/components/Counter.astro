@@ -1,0 +1,91 @@
+---
+---
+
+const getTimeRemaining = (endtime: Date) => {
+    let t = Date.parse(`${endtime}`) - Date.parse(`${new Date()}`);
+    let seconds = Math.floor((t / 1000) % 60);
+    let minutes = Math.floor((t / 1000 / 60) % 60);
+    let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    let days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      total: t,
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+    };
+  }
+  
+  const initializeClock = (id: unknown, endtime: Date) =>{
+    let clock = document.getElementById(`${id}`);
+    let daysSpan = clock?.querySelector('.days');
+    let hoursSpan = clock?.querySelector('.hours');
+    let minutesSpan = clock?.querySelector('.minutes');
+    let secondsSpan = clock?.querySelector('.seconds');
+  
+    const updateClock = () => {
+      let t = getTimeRemaining(endtime);
+  
+      daysSpan!.innerHTML = `${t.days}`;
+      hoursSpan!.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan!.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan!.innerHTML = ('0' + t.seconds).slice(-2);
+  
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+  
+    updateClock();
+    let timeinterval = setInterval(updateClock, 1000);
+  }
+  
+  let deadline = new Date(Date.parse(`${new Date()}`) + 85 * 24 * 60 * 60 * 1000);
+  
+  initializeClock('clockdiv', deadline);
+
+
+
+<div>
+    <h1
+        class="font-['Red Hat Text'] font-bold text-white text-[18px] w-[327px] tracking-[6.14px] text-center mx-auto mt-[142px]"
+    >
+        {"We’re launching soon".toUpperCase()}
+    </h1>
+    <div class="w-100% max-w-327">
+        <span class="sr-only" aria-live="polite" data-sr></span>
+        <div class="timer" aria-hidden="true">
+            <div class="flex relative flex-column justify-between w-[19.2vw] h-[9.1vw] " data-card="days">
+                <span class="timer__card-shadow"></span>
+                <div class="timer__card timer__card--front" data-front="00">
+                </div>
+                <div class="timer__card timer__card--back" data-back="00"></div>
+                <span class="timer__card-label">Days</span>
+            </div>
+
+            <div class="timer__card-wrapper" data-card="hours">
+                <span class="timer__card-shadow"></span>
+                <div class="timer__card timer__card--front" data-front="00">
+                </div>
+                <div class="timer__card timer__card--back" data-back="00"></div>
+                <span class="timer__card-label">Hours</span>
+            </div>
+
+            <div class="timer__card-wrapper" data-card="minutes">
+                <span class="timer__card-shadow"></span>
+                <div class="timer__card timer__card--front" data-front="00">
+                </div>
+                <div class="timer__card timer__card--back" data-back="00"></div>
+                <span class="timer__card-label">Minutes</span>
+            </div>
+
+            <div class="timer__card-wrapper" data-card="seconds">
+                <span class="timer__card-shadow"></span>
+                <div class="timer__card timer__card--front" data-front="00">
+                </div>
+                <div class="timer__card timer__card--back" data-back="00"></div>
+                <span class="timer__card-label">Seconds</span>
+            </div>
+        </div>
+    </div>
+</div>

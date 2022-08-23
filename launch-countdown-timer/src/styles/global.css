@@ -1,0 +1,54 @@
+  /* Typography */
+
+  @layer utilities {
+    .perspective {
+        perspective: 200px;
+    }
+}
+  @font-face {
+  font-family: 'Red Hat Text Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Red Hat Text Regular'), url('./font/RedHatText-Regular.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Red Hat Text Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Red Hat Text Italic'), url('./font/RedHatText-Italic.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Red Hat Text Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Red Hat Text Medium'), url('./font/RedHatText-Medium.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Red Hat Text Medium Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Red Hat Text Medium Italic'), url('./font/RedHatText-MediumItalic.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Red Hat Text Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Red Hat Text Bold'), url('./font/RedHatText-Bold.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Red Hat Text Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Red Hat Text Bold Italic'), url('./font/RedHatText-BoldItalic.woff') format('woff');
+  }
+

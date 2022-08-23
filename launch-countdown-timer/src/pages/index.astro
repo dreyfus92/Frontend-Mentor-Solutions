@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+import Counter from "../components/Counter.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html
+	class="bg-gradient-to-b h-full from-[#191a24] via-[#1e1f29] to-[#2b212d] -z-20"
+>
+	<head>
+		<title>launch countdown timer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta property="”og:type”" content="”article”" />
+	</head>
+	<body class="bg-[url('/bg-stars.svg')] min-h-screen bg-contain">
+		<div>
+			<Counter />
+			<img
+				src="/pattern-hills.svg"
+				alt="pattern-hills"
+				class="absolute bottom-0 h-fit w-full"
+			/>
+			<Footer />
+		</div>
+	</body>
+</html>

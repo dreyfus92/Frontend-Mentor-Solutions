@@ -1,10 +1,5 @@
   /* Typography */
 
-  @layer utilities {
-    .perspective {
-        perspective: 200px;
-    }
-}
   @font-face {
   font-family: 'Red Hat Text Regular';
   font-style: normal;

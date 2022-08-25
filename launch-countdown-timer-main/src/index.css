@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 html{
-    background: linear-gradient(180deg, #191a24, #1e1f29, #2b212d);
+    background: linear-gradient(#1D1E28 0%, #261C2D 97%, #261A2D 100%);
     z-index: -20;
 }

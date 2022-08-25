@@ -1,0 +1,26 @@
+lockfileVersion: 5.4
+
+specifiers:
+  prettier: ^2.7.1
+  prettier-plugin-tailwindcss: ^0.1.13
+
+devDependencies:
+  prettier: 2.7.1
+  prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
+
+packages:
+
+  /prettier-plugin-tailwindcss/0.1.13_prettier@2.7.1:
+    resolution: {integrity: sha512-/EKQURUrxLu66CMUg4+1LwGdxnz8of7IDvrSLqEtDqhLH61SAlNNUSr90UTvZaemujgl3OH/VHg+fyGltrNixw==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.7.1
+    dev: true
+
+  /prettier/2.7.1:
+    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true

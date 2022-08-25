@@ -45,14 +45,20 @@ function App() {
     };
   }, []);
   return (
-    <body className="bg-[url('/assets/bg-stars.svg')] min-h-[78vh] bg-fit ">
-      <Counter days={days} hours={hours} minutes={minutes} seconds={seconds} />
-      <img
-        src="/assets/pattern-hills.svg"
-        alt="pattern-hills"
-        className="absolute bottom-0 h-fit w-full"
-      />
-      <Footer />
+    <body>
+      <div className="bg-[url('/assets/bg-stars.svg')] h-[78vh] desktop:h-[83vh] bg-fit">
+        <h1 className="font-['Red Hat Text'] font-bold text-white text-[18px] desktop:text-[22px] w-[327px] desktop:w-[431px] tracking-[6.14px] text-center mx-auto mt-[142px] mb-[54px] desktop:mt-[132px] desktop:mb-[104px]">
+          WE&acute;RE LAUNCHING SOON
+        </h1>
+        <Counter
+          days={days}
+          hours={hours}
+          minutes={minutes}
+          seconds={seconds}
+        />
+        <div className="absolute bottom-0 h-[194px] w-full bg-[center_right_-11rem] desktop:bg-cover desktop:bg-center bg-no-repeat bg-[url('/assets/pattern-hills.svg')]"></div>
+        <Footer />
+      </div>
     </body>
   );
 }

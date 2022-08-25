@@ -61,10 +61,7 @@ export const Counter = ({ days, hours, minutes, seconds }: timeProps) => {
   }
   return (
     <div>
-      <h1 className="font-['Red Hat Text'] font-bold text-white text-[18px] w-[327px] tracking-[6.14px] text-center mx-auto mt-[142px]">
-        WE&acute;RE LAUNCHING SOON
-      </h1>
-      <div className="max-w-327 flex justify-center mt-[54px] text-white">
+      <div className="max-w-327 desktop:min-w-[668px] flex justify-center text-white">
         <DigitBox num={days} unit={"DAYS"} flip={daysFlip} />
         <DigitBox num={hours} unit={"HOURS"} flip={hoursFlip} />
         <DigitBox num={minutes} unit={"MINUTES"} flip={minutesFlip} />

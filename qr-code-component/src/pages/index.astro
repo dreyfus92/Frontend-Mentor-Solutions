@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import qrImg from "/image-qr-code.png";
+import "../styles/index.css";
 ---
 
 <Layout title="QR Component">
 	<main class="h-screen flex justify-center items-center">
-		<div class="w-[83%] bg-white p-4 rounded-2xl xl:w-[320px] xl:p-4">
+		<div class="bg-white p-4 rounded-2xl w-[320px]">
 			<img src={qrImg} alt="qr-image" class="rounded-2xl xl:rounded-lg" />
 			<h1
 				class="text-[20px] font-semibold text-center mx-3 mb-4 mt-6 xl:mx-3 xl:mt-4 xl:mb-3 xl:text-[22px] xl:leading-[28px]"

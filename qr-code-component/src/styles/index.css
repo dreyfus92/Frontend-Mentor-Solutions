@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-text: hsl(218, 44%, 22%);
+    --color-bg: hsl(211, 42.4%, 88.4%);
+}
+
+html {
+    font-family: Outfit, sans-serif;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+}
+
+body {
+    margin: 0;
+}

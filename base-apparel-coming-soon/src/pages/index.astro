@@ -1,0 +1,77 @@
+---
+// imports for images
+import bgPattern from "/bg-pattern-desktop.svg";
+import fmLogo from "/favicon-32x32.png";
+import logo from "/logo.svg";
+import heroDesktop from "/hero-desktop.jpg";
+import heroMobile from "/hero-mobile.jpg";
+import arrowIcon from "/icon-arrow.svg";
+import errorIcon from "/icon-error.svg";
+
+// styles
+import "../styles/index.css";
+
+// utils
+
+import { screenWidth } from "../lib/utils";
+---
+
+<html lang="en">
+	<head>
+		<title>Base Apparel Coming Soon</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="icon" type="image/png" sizes="32x32" href={fmLogo} />
+	</head>
+
+	<body class="">
+		<div class="desktop:flex font-['Josefin Sans']">
+			<img src={logo} alt="logo-png" class="w-[100px] my-8 ml-8" />
+			<img
+				src={heroMobile}
+				alt="hero-img"
+				class="h-[250px] w-full visible desktop:invisible"
+			/>
+			<div class="mt-[64px] w-[311px] mx-auto">
+				<h1
+					class="font-light text-[40px] text-center tracking-[10.83px] leading-[42px]"
+				>
+					<span class="text-[#CE9898] font-thin break-words"
+						>WE'RE
+					</span>COMING SOON
+				</h1>
+				<p
+					class="text-[#CE9898] font-regular text-[14px] text-center leading-[22px] mt-4"
+				>
+					Hello fellow shoppers! We're currently building our new
+					fashion store. Add your email below to stay up-to-date with
+					announcements and our launch deals.
+				</p>
+				<div class="relative block">
+					<input
+						type="email"
+						placeholder="Email Adress"
+						class="relative block pl-[24px] peer mt-8 border-[#CE9898] focus:outline-[#F96464] focus:outline-[0.5px] border-[1px] rounded-full placeholder:text-[#CE9898] placeholder:ml-[24px] w-full h-[48px]"
+					/>
+					<p
+						class="mt-2 ml-[23.5px] invisible peer-invalid:visible text-[#F96464] text-sm"
+					>
+						Please provide a valid email
+					</p>
+					<img
+						src={errorIcon}
+						class="invisible peer-invalid:visible absolute top-[12px] right-[70px]"
+					/>
+					<button
+						class="absolute right-[-1px] top-[0.5px] rounded-[28px] w-[64px] h-[48px] bg-[#CE9898]"
+						><img src={arrowIcon} class="mx-auto" />
+					</button>
+				</div>
+			</div>
+		</div>
+		<script type="module">
+			import "../lib/utils";
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import qrImg from "/image-qr-code.png";
+---
+
+<Layout title="QR Component">
+	<main class="h-screen flex justify-center items-center">
+		<div class="w-[83%] bg-white p-4 rounded-2xl xl:w-[320px] xl:p-4">
+			<img src={qrImg} alt="qr-image" class="rounded-2xl xl:rounded-lg" />
+			<h1
+				class="text-[20px] font-semibold text-center mx-3 mb-4 mt-6 xl:mx-3 xl:mt-4 xl:mb-3 xl:text-[22px] xl:leading-[28px]"
+			>
+				Improve your front-end skills by building projects
+			</h1>
+			<p
+				class="text-[#7b879d] text-[15px] text-center mx-3 mb-6 xl:mx-6 xl:leading-[18px]"
+			>
+				Scan the QR code to visit Frontend Mentor and take your coding
+				skills to the next level
+			</p>
+		</div>
+	</main>
+</Layout>

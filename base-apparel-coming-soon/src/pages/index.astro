@@ -1,6 +1,5 @@
 ---
 // imports for images
-import bgPattern from "/bg-pattern-desktop.svg";
 import fmLogo from "/favicon-32x32.png";
 import logo from "/logo.svg";
 import heroDesktop from "/hero-desktop.jpg";
@@ -10,10 +9,6 @@ import errorIcon from "/icon-error.svg";
 
 // styles
 import "../styles/index.css";
-
-// utils
-
-import { screenWidth } from "../lib/utils";
 ---
 
 <html lang="en">
@@ -25,34 +20,51 @@ import { screenWidth } from "../lib/utils";
 		<link rel="icon" type="image/png" sizes="32x32" href={fmLogo} />
 	</head>
 
-	<body class="">
-		<div class="desktop:flex font-['Josefin Sans']">
-			<img src={logo} alt="logo-png" class="w-[100px] my-8 ml-8" />
+	<body
+		class="bg-[url('/bg-pattern-desktop.svg')] bg-no-repeat desktop:bg-[length:900px_780px]"
+	>
+		<div class="desktop:flex flex-row-reverse font-['Josefin Sans']">
+			<img
+				src={logo}
+				alt="logo-png"
+				class="w-[100px] my-8 ml-8 desktop:absolute desktop:right-[1190px] desktop:w-[157px]"
+			/>
+			<img
+				src={heroDesktop}
+				alt="hero-img"
+				class="desktop:w-[610px] desktop:h-[780px] mobile:w-0 mobile:h-0"
+			/>
 			<img
 				src={heroMobile}
 				alt="hero-img"
-				class="h-[250px] w-full visible desktop:invisible"
+				class="h-[250px] w-full visible desktop:invisible desktop:w-0 desktop:h-0"
 			/>
-			<div class="mt-[64px] w-[311px] mx-auto">
+			<div
+				class="mt-[64px] w-[311px] mx-auto desktop:mt-[244px] desktop:ml-[165px] desktop:w-[445px]"
+			>
 				<h1
-					class="font-light text-[40px] text-center tracking-[10.83px] leading-[42px]"
+					class="font-light text-[40px] text-center tracking-[10.83px] leading-[42px] desktop:text-[64px] desktop:leading-[64px] desktop:text-left"
 				>
-					<span class="text-[#CE9898] font-thin break-words"
+					<span
+						class="text-[#CE9898] font-thin break-words desktop:leading-[71px]"
 						>WE'RE
 					</span>COMING SOON
 				</h1>
 				<p
-					class="text-[#CE9898] font-regular text-[14px] text-center leading-[22px] mt-4"
+					class="text-[#CE9898] font-regular text-[14px] text-center leading-[22px] mt-4 desktop:text-left desktop:text-[16px]"
 				>
 					Hello fellow shoppers! We're currently building our new
 					fashion store. Add your email below to stay up-to-date with
 					announcements and our launch deals.
 				</p>
+
+				<!-- SearchBar -->
+
 				<div class="relative block">
 					<input
 						type="email"
 						placeholder="Email Adress"
-						class="relative block pl-[24px] peer mt-8 border-[#CE9898] focus:outline-[#F96464] focus:outline-[0.5px] border-[1px] rounded-full placeholder:text-[#CE9898] placeholder:ml-[24px] w-full h-[48px]"
+						class="relative block pl-[24px] peer mt-8 border-[#CE9898] focus:outline-[#F96464] focus:outline-[0.5px] border-[1px] rounded-full placeholder:text-[#CE9898] placeholder:ml-[24px] w-full h-[48px] desktop:h-[56px]"
 					/>
 					<p
 						class="mt-2 ml-[23.5px] invisible peer-invalid:visible text-[#F96464] text-sm"
@@ -64,7 +76,7 @@ import { screenWidth } from "../lib/utils";
 						class="invisible peer-invalid:visible absolute top-[12px] right-[70px]"
 					/>
 					<button
-						class="absolute right-[-1px] top-[0.5px] rounded-[28px] w-[64px] h-[48px] bg-[#CE9898]"
+						class="absolute right-[-1px] top-[0.5px] rounded-[28px] w-[64px] h-[48px] desktop:w-[100px] desktop:h-[56px] bg-gradient-to-r from-[#F8BFBF] to-[#EE8B8B]"
 						><img src={arrowIcon} class="mx-auto" />
 					</button>
 				</div>

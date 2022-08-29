@@ -5,6 +5,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'BigShoulderDisplay': ['Big Shoulders Display', 'sans'],
+				'LexendDeca': ['Lexend Deca', 'sans-serif']
 			}
 		},
 	},

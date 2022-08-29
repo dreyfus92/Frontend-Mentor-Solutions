@@ -20,14 +20,15 @@ const {
 ---
 
 <div
-	class={`${backGround} px-7 py-10 ${roundCorners} ${margins} mx-4 w-[230px] text-[#ffffff]`}
+	class={`${backGround} px-7 py-10 ${roundCorners} ${margins} mx-4 xl:mx-0 h-auto w-[230px] text-[#ffffff]`}
 >
-	<img src={img} alt={`${img}`} />
-	<h1 class="mb-6">
+	<img src={img} alt={`${img}`} class="mb-6" />
+	<h1 class="mb-4">
 		{title}
 	</h1>
-	<p class="mb-6">{body}</p>
-	<button class={`${buttonText} bg-white rounded-full py-2 px-4`}
+	<p class="mb-6 xl:mb-16">{body}</p>
+	<button
+		class={`${buttonText} bg-white rounded-full py-2 px-4 hover:${backGround}`}
 		>Learn More</button
 	>
 </div>

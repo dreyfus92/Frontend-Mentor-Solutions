@@ -10,7 +10,9 @@ import "../styles/index.css";
 ---
 
 <Layout title="3-column-preview-card-component">
-	<main class="flex flex-col justify-center items-center">
+	<main
+		class="flex flex-col justify-center items-center xl:flex-row xl:h-screen"
+	>
 		<Card
 			img={sedans}
 			title={"SEDANS"}
@@ -19,8 +21,9 @@ import "../styles/index.css";
 			extraStyles={{
 				backGround: "bg-[#E38826]",
 				buttonText: "text-[#E38826] text-[10px]",
-				roundCorners: "rounded-t-lg",
-				margins: "mt-8",
+				roundCorners:
+					"rounded-t-lg xl:rounded-bl-lg xl:rounded-tl-lg xl:rounded-tr-none",
+				margins: "mt-8 xl:mt-0",
 			}}
 		/>
 		<Card
@@ -43,8 +46,9 @@ import "../styles/index.css";
 			extraStyles={{
 				backGround: "bg-[#004241]",
 				buttonText: "text-[#004241] text-[10px]",
-				roundCorners: "rounded-b-lg",
-				margins: "mb-8",
+				roundCorners:
+					"rounded-b-lg xl:rounded-br-lg xl:rounded-tr-lg xl:rounded-bl-none",
+				margins: "mb-8 xl:mb-0",
 			}}
 		/>
 	</main>

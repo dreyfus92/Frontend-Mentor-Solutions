@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    :root {
+        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+        --color-text: hsl(12, 5%, 4%);
+        --color-bg: hsl(10, 21%, 95%);
+    }
+    html {
+        font-size: var(--font-size-base);
+        color: var(--color-text);
+        background-color: var(--color-bg);
+    }
+
+    body {
+        margin: 0;
+    }
+
+    h1{
+        font-family: 'Big Shoulders Display', cursive;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    p{
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 12px;
+        font-weight: 200;
+    }
+}

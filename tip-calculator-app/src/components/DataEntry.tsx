@@ -1,9 +1,26 @@
-export const DataEntry = () => {
+import type React from "react";
+
+interface DataEntryProps {
+  setBill: React.Dispatch<React.SetStateAction<string>>;
+  setDiscount: React.Dispatch<React.SetStateAction<string>>;
+  setNumberOfPeople: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const DataEntry = ({
+  setBill,
+  setDiscount,
+  setNumberOfPeople,
+}: DataEntryProps) => {
   return (
-    <div className="xl:w-[379px] h-[388px] bg-yellow-300">
+    <div className="xl:w-[379px] h-[388px]">
       <div className="relative">
-        <p className="text-[#5E7A7D]">Bill</p>
-        <input className="relative block bg-[#F3F9FA] xl:w-[379px] xl:h-[48px]" />
+        <label className="text-[#5E7A7D]">Bill</label>
+        <input
+          type="number"
+          name="bill"
+          className="relative block bg-[#F3F9FA] xl:w-[379px] xl:h-[48px] placeholder:"
+          onChange={(e) => setBill(e.target.value)}
+        />
         <img
           src="/icon-dollar.svg"
           alt="dollar-sign"
@@ -13,33 +30,53 @@ export const DataEntry = () => {
       <div className="mt-[40px]">
         <p className="text-[#5E7A7D] mb-[16px]">Select Tip %</p>
         <div className="grid grid-cols-3 gap-4">
-          <button className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px]">
+          <button
+            className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px] hover:bg-[#26C2AE]"
+            onClick={() => setDiscount("5")}
+          >
             5%
           </button>
-          <button className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px]">
+          <button
+            className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px] hover:bg-[#26C2AE]"
+            onClick={() => setDiscount("10")}
+          >
             10%
           </button>
-          <button className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px]">
+          <button
+            className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px] hover:bg-[#26C2AE]"
+            onClick={() => setDiscount("15")}
+          >
             15%
           </button>
-          <button className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px]">
+          <button
+            className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px] hover:bg-[#26C2AE]"
+            onClick={() => setDiscount("20")}
+          >
             20%
           </button>
-          <button className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px]">
+          <button
+            className="bg-[#00474B] text-white text-[24px] w-[117px] h-[48px] rounded-[5px] hover:bg-[#26C2AE]"
+            onClick={() => setDiscount("25")}
+          >
             25%
           </button>
           <input
+            onChange={(e) => setDiscount(e.target.value)}
             placeholder="Custom"
             className="bg-[#F3F9FA] text-white text-[24px] w-[117px] h-[48px] rounded-[5px] placeholder:text-[#547878] placeholder:text-center"
           />
         </div>
       </div>
       <div className="relative xl:mt-[40px]">
-        <p>Number of People</p>
-        <input className="relative block bg-[#F3F9FA] xl:w-[379px] xl:h-[48px]" />
+        <label>Number of People</label>
+        <input
+          type="number"
+          className="relative block bg-[#F3F9FA] xl:w-[379px] xl:h-[48px]"
+          onChange={(e) => setNumberOfPeople(e.target.value)}
+        />
         <img
           src="/icon-person.svg"
-          className="absolute top-[41px] left-[15px]"
+          className="absolute top-[40px] left-[15px]"
         />
       </div>
     </div>

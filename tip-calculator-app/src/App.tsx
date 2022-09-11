@@ -27,7 +27,7 @@ export const App = () => {
   console.log(tipAmountPerPerson, totalPerPerson);
   return (
     <div className="h-screen flex items-center justify-center font-mono-space">
-      <div className="md:w-[920px] xl:h-[481px] bg-white rounded-[20px] justify-around flex items-center">
+      <div className="md:w-[920px] md:h-[481px] bg-white rounded-[20px] justify-around flex items-center">
         <DataEntry
           setBill={setBill}
           setDiscount={setDiscount}

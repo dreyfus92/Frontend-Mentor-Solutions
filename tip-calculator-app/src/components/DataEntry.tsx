@@ -12,13 +12,13 @@ export const DataEntry = ({
   setNumberOfPeople,
 }: DataEntryProps) => {
   return (
-    <div className="xl:w-[379px] h-[388px]">
+    <div className="md:w-[379px] h-[388px]">
       <div className="relative">
         <label className="text-[#5E7A7D]">Bill</label>
         <input
           type="number"
           name="bill"
-          className="relative block bg-[#F3F9FA] xl:w-[379px] xl:h-[48px] placeholder:"
+          className="relative block bg-[#F3F9FA] md:w-[379px] md:h-[48px] md:text-right md:pr-[17px] focus:outline-[#26C2AE] focus:cursor-pointer"
           onChange={(e) => setBill(e.target.value)}
         />
         <img
@@ -67,11 +67,11 @@ export const DataEntry = ({
           />
         </div>
       </div>
-      <div className="relative xl:mt-[40px]">
+      <div className="relative md:mt-[40px]">
         <label>Number of People</label>
         <input
           type="number"
-          className="relative block bg-[#F3F9FA] xl:w-[379px] xl:h-[48px]"
+          className="relative block bg-[#F3F9FA] md:w-[379px] md:h-[48px] md:text-right md:pr-[17px] focus:outline-[#26C2AE] focus:cursor-pointer"
           onChange={(e) => setNumberOfPeople(e.target.value)}
         />
         <img

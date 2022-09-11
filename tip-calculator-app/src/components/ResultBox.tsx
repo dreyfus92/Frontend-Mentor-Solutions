@@ -16,7 +16,7 @@ export const ResultBox = ({
   setNumberOfPeople,
 }: ResultBoxProps) => {
   return (
-    <div className="xl:w-[413px] h-[417px] bg-[#00474B] rounded-[15px]">
+    <div className="md:w-[413px] h-[417px] bg-[#00474B] rounded-[15px]">
       <div className="flex justify-around items-center mt-[40px] mb-[25px]">
         <div>
           <h1 className="text-white text-[16px]">Tip Amount</h1>

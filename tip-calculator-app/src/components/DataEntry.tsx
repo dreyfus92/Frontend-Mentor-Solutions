@@ -33,7 +33,7 @@ export const DataEntry = ({
       </div>
       <div className="mt-[32px] md:mt-[40px]">
         <p className="text-[#5E7A7D] mb-[16px]">Select Tip %</p>
-        <div className="grid grid-cols-2 gap-y-4  md:grid-cols-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <button
             className="bg-[#00474B] text-white text-[24px] w-[146px] md:w-[117px] h-[48px] rounded-[5px] hover:bg-[#9FE8DF] hover:text-[#00474B]"
             onClick={() => setDiscount("5")}

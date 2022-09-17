@@ -12,15 +12,19 @@ const navItems = [
 ---
 
 <nav
-  class="text-white border-b-[1px] border-b-[#979797] flex justify-between h-[85px] items-center"
+  class="text-white border-b-[1px] border-b-[#979797] flex justify-between h-[68px] md:h-[85px] items-center"
 >
   <h2 class="text-[32px] ml-[32px]">The Planets</h2>
-  <div class="flex gap-[33px] w-[665px] mr-[40px]">
+  <div class="lg:flex lg:gap-[33px] lg:w-[665px] lg:mr-[40px] hidden">
     {
       navItems.map((planet) => (
-        <p class="text-[#FFFFFF] text-[11px]">{planet}</p>
+        <a href="/">
+          <p class="text-[#FFFFFF] text-[11px]">{planet}</p>
+        </a>
       ))
     }
-    {}
   </div>
+  <button class="mr-[24px] lg:hidden"
+    ><img src="assets/icon-hamburger.svg" class="focus:fill-[#979797]" />
+  </button>
 </nav>

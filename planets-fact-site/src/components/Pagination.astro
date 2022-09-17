@@ -1,0 +1,35 @@
+---
+interface Props {
+  overviewLink: string;
+  structureLink: string;
+  surfaceLink: string;
+  outlineBoolOverview: boolean;
+  outlineBoolStructure: boolean;
+  outlineBoolSurface: boolean;
+  outlineColor: string;
+}
+const {
+  overviewLink,
+  structureLink,
+  surfaceLink,
+  outlineBoolOverview,
+  outlineBoolStructure,
+  outlineBoolSurface,
+  outlineColor,
+} = Astro.props;
+---
+
+<div
+  class="text-[#FFFFFF] text-[9px] font-bold border-b-[1px] border-b-[#979797] flex justify-around h-[68px] md:h-[85px] items-center"
+>
+  <a
+    href={overviewLink}
+    class={`${
+      outlineBoolOverview
+        ? `underline decoration-4 ${outlineColor} underline-offset-[27px]`
+        : ""
+    }`}>STRUCTURE</a
+  >
+  <button><a href={structureLink}>STRUCTURE</a></button>
+  <button><a href={surfaceLink}>SURFACE</a></button>
+</div>

@@ -1,6 +1,8 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import stars from "../../public/assets/background-stars.svg";
+
+import "@fontsource/antonio";
+import "@fontsource/spartan";
 
 export interface Props {
   title: string;
@@ -19,6 +21,7 @@ import "../styles/index.css";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
+
   <Navbar />
   <body class="bg-[url('assets/bg-stars.svg')]">
     <main class="text-white h-screen">

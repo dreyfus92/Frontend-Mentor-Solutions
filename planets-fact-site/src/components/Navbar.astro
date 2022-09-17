@@ -1,0 +1,26 @@
+---
+const navItems = [
+  "MERCURY",
+  "VENUS",
+  "EARTH",
+  "MARS",
+  "JUPITER",
+  "SATURN",
+  "URANUS",
+  "NEPTUNE",
+];
+---
+
+<nav
+  class="text-white border-b-[1px] border-b-[#979797] flex justify-between h-[85px] items-center"
+>
+  <h2 class="text-[32px] ml-[32px]">The Planets</h2>
+  <div class="flex gap-[33px] w-[665px] mr-[40px]">
+    {
+      navItems.map((planet) => (
+        <p class="text-[#FFFFFF] text-[11px]">{planet}</p>
+      ))
+    }
+    {}
+  </div>
+</nav>

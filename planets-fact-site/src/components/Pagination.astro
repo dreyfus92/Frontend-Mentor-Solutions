@@ -20,7 +20,7 @@ const {
 ---
 
 <div
-  class="text-[#FFFFFF] text-[9px] font-bold border-b-[1px] border-b-[#979797] flex justify-around h-[68px] md:h-[85px] items-center"
+  class="text-[#FFFFFF] text-[9px] font-bold border-b-[1px] md:hidden lg:hidden border-b-[#979797] flex justify-around h-[68px] md:h-[85px] items-center"
 >
   <a
     href={overviewLink}
@@ -28,8 +28,22 @@ const {
       outlineBoolOverview
         ? `underline decoration-4 ${outlineColor} underline-offset-[27px]`
         : ""
+    }`}>OVERVIEW</a
+  >
+  <a
+    href={structureLink}
+    class={`${
+      outlineBoolStructure
+        ? `underline decoration-4 ${outlineColor} underline-offset-[27px]`
+        : ""
     }`}>STRUCTURE</a
   >
-  <button><a href={structureLink}>STRUCTURE</a></button>
-  <button><a href={surfaceLink}>SURFACE</a></button>
+  <a
+    href={surfaceLink}
+    class={`${
+      outlineBoolSurface
+        ? `underline decoration-4 ${outlineColor} underline-offset-[27px]`
+        : ""
+    }`}>SURFACE</a
+  >
 </div>

@@ -10,18 +10,18 @@ import data from "../utils/data.json";
     outlineBoolOverview={true}
     outlineBoolStructure={false}
     outlineBoolSurface={false}
-    outlineColor={"underline-blue-200"}
+    outlineColor="decoration-[#419EBB]"
     overviewLink="/"
     structureLink="/structure"
     surfaceLink="/surface"
   />
   <section class="flex flex-col justify-center items-center">
     <img
-      src="assets/planet-mercury.svg"
+      src={data[0].images.planet}
       alt="mercury"
       width="111px"
       height="111px"
-      class="my-[95px]"
+      class="my-[95px] md:h-[184px] md:w-[184px]"
     />
     <div>
       <h2 class="text-center">{data[0].name.toUpperCase()}</h2>
@@ -29,8 +29,22 @@ import data from "../utils/data.json";
         {data[0].overview.content}
       </p>
     </div>
-    <p class="mt-[32px] text-[#FFFFFF]">
-      Source: <a href={data[0].overview.source} target="_blank">Wikipedia</a>
+    <p
+      class="mt-[32px] text-[#838391] font-thin flex flex-row justify-center items-center"
+    >
+      Source: <a
+        href={data[0].overview.source}
+        target="_blank"
+        class="underline font-bold"
+        >Wikipedia
+      </a>
+      <img
+        src="assets/icon-source.svg"
+        alt="source icon"
+        height="12px"
+        width="12px"
+        class="ml-[4px]"
+      />
     </p>
     <div class="mt-[28px]">
       <Card title="rotation time" data={data[0].rotation} />

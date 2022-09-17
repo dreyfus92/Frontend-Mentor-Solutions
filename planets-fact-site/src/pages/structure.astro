@@ -7,13 +7,17 @@ import data from "../utils/data.json";
 
 <Layout title="Planets fact site">
   <Pagination
+    outlineBoolOverview={false}
+    outlineBoolStructure={true}
+    outlineBoolSurface={false}
+    outlineColor="decoration-[#419EBB]"
     overviewLink="/"
     structureLink="/structure"
     surfaceLink="/surface"
   />
   <section class="flex flex-col justify-center items-center">
     <img
-      src="assets/planet-mercury.svg"
+      src={data[0].images.internal}
       alt="mercury"
       width="111px"
       height="111px"
@@ -22,11 +26,31 @@ import data from "../utils/data.json";
     <div>
       <h2 class="text-center">{data[0].name.toUpperCase()}</h2>
       <p class="text-center mt-[16px] text-[11px] w-[327px] leading-[22px]">
-        {data[0].overview.content}
+        {data[0].structure.content}
       </p>
     </div>
-    <p class="mt-[32px] text-[#FFFFFF]">
-      Source: <a href={data[0].overview.source} target="_blank">Wikipedia</a>
+    <p
+      class="mt-[32px] text-[#838391] font-thin flex flex-row justify-center items-center"
+    >
+      Source: <a
+        href={data[0].structure.source}
+        target="_blank"
+        class="underline font-bold"
+        >Wikipedia
+      </a>
+      <img
+        src="assets/icon-source.svg"
+        alt="source icon"
+        height="12px"
+        width="12px"
+        class="ml-[4px]"
+      />
     </p>
+    <div class="mt-[28px]">
+      <Card title="rotation time" data={data[0].rotation} />
+      <Card title="revolution time" data={data[0].revolution} />
+      <Card title="radius" data={data[0].radius} />
+      <Card title="average temp." data={data[0].temperature} />
+    </div>
   </section>
 </Layout>

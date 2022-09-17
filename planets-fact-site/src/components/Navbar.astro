@@ -1,6 +1,5 @@
 ---
 const navItems = [
-  "MERCURY",
   "VENUS",
   "EARTH",
   "MARS",
@@ -12,19 +11,24 @@ const navItems = [
 ---
 
 <nav
-  class="text-white border-b-[1px] border-b-[#979797] flex justify-between h-[68px] md:h-[85px] items-center"
+  class="text-white border-b-[1px] border-b-[#979797] flex md:flex-col md:justify-around justify-between h-[68px] md:h-[159px] lg:h-[85px] items-center"
 >
-  <h2 class="text-[32px] ml-[32px]">The Planets</h2>
-  <div class="lg:flex lg:gap-[33px] lg:w-[665px] lg:mr-[40px] hidden">
+  <h2 class="text-[32px] ml-[32px] md:ml-0">The Planets</h2>
+  <div
+    class="md:flex md:gap-x-[33px] md:w-[665px] lg:flex lg:gap-[33px] lg:w-[665px] lg:mr-[40px] hidden"
+  >
+    <a href={"/"}>
+      <p class="text-[#FFFFFF] text-[11px]">MERCURY</p>
+    </a>
     {
       navItems.map((planet) => (
-        <a href="/">
+        <a href={`/${planet.toLowerCase()}/overview`}>
           <p class="text-[#FFFFFF] text-[11px]">{planet}</p>
         </a>
       ))
     }
   </div>
-  <button class="mr-[24px] lg:hidden"
+  <button class="mr-[24px] md:hidden lg:hidden xl:hidden"
     ><img src="assets/icon-hamburger.svg" class="focus:fill-[#979797]" />
   </button>
 </nav>

@@ -1,0 +1,58 @@
+---
+interface Props {
+  overviewLink: string;
+  structureLink: string;
+  surfaceLink: string;
+  outlineBoolOverview: boolean;
+  outlineBoolStructure: boolean;
+  outlineBoolSurface: boolean;
+  outlineColor: string;
+}
+const {
+  overviewLink,
+  structureLink,
+  surfaceLink,
+  outlineBoolOverview,
+  outlineBoolStructure,
+  outlineBoolSurface,
+  outlineColor,
+} = Astro.props;
+---
+
+<div
+  class="hidden text-white text-[9px] font-bold md:flex md:flex-col justify-center gap-y-[16px] md:h-[281px] md:items-center lg:h-[176px] lg:w-[350px] lg:items-start lg:text-[12px]"
+>
+  <a
+    href={overviewLink}
+    class={`${
+      outlineBoolOverview
+        ? `${outlineColor} md:w-[281px] md:h-[40px] md:flex md:items-center`
+        : "md:border-[1px] border-[#38384F] md:hover:bg-[#38384F] md:w-[281px] md:h-[40px] md:flex md:items-center"
+    }`}
+    ><p class="text-[9px] font-thin ml-[20px] mr-[17px] lg:text-[12px]">
+      01
+    </p>OVERVIEW</a
+  >
+  <a
+    href={structureLink}
+    class={`${
+      outlineBoolStructure
+        ? `${outlineColor} md:w-[281px] md:h-[40px] md:flex md:items-center`
+        : "md:border-[1px] border-[#38384F] md:hover:bg-[#38384F] md:w-[281px] md:h-[40px] md:flex md:items-center"
+    }`}
+    ><p class="text-[9px] font-thin ml-[20px] mr-[17px] lg:text-[12px]">
+      02
+    </p>STRUCTURE</a
+  >
+  <a
+    href={surfaceLink}
+    class={`${
+      outlineBoolSurface
+        ? `${outlineColor} md:w-[281px] md:h-[40px] md:flex md:items-center`
+        : "md:border-[1px] border-[#38384F] md:hover:bg-[#38384F] md:w-[281px] md:h-[40px] md:flex md:items-center"
+    }`}
+    ><p class="text-[9px] font-thin ml-[20px] mr-[17px] lg:text-[12px]">
+      01
+    </p>SURFACE</a
+  >
+</div>

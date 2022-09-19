@@ -8,21 +8,21 @@ import data from "../../utils/data.json";
 
 <Layout title="Planets fact site">
   <Pagination
-    outlineBoolOverview={true}
-    outlineBoolStructure={false}
+    outlineBoolOverview={false}
+    outlineBoolStructure={true}
     outlineBoolSurface={false}
-    outlineColor="decoration-[#EDA249]"
-    overviewLink="/venus/overview"
-    structureLink="/venus/structure"
-    surfaceLink="/venus/surface"
+    outlineColor="decoration-[#1EC1A2]"
+    overviewLink="/uranus/overview"
+    structureLink="/uranus/structure"
+    surfaceLink="/uranus/surface"
   />
   <section>
     <div
       class="flex flex-col justify-center items-center lg:flex-row lg:justify-center lg:items-center"
     >
       <img
-        src={data[1].images.planet}
-        alt="venus"
+        src={data[6].images.internal}
+        alt="uranus"
         width="111px"
         height="111px"
         class="my-[95px] md:my-[135px] md:h-[184px] md:w-[184px] lg:my-0 lg:w-[290px] lg:h-[290px] lg:mr-[250px]"
@@ -32,18 +32,18 @@ import data from "../../utils/data.json";
       >
         <div>
           <h2 class="text-center md:text-left md:text-[48px]">
-            {data[1].name.toUpperCase()}
+            {data[6].name.toUpperCase()}
           </h2>
           <p
             class="text-center md:text-left mt-[16px] text-[11px] w-[327px] leading-[22px] lg:text-[14px]"
           >
-            {data[1].overview.content}
+            {data[6].structure.content}
           </p>
           <p
             class="mt-[32px] lg:mt-[16px] lg:mb-[20px] text-[#838391] font-thin flex flex-row justify-center md:justify-start items-center"
           >
             Source: <a
-              href={data[1].overview.source}
+              href={data[6].structure.source}
               target="_blank"
               class="underline font-bold"
               >Wikipedia
@@ -58,23 +58,23 @@ import data from "../../utils/data.json";
           </p>
         </div>
         <ButtonGroup
-          outlineBoolOverview={true}
-          outlineBoolStructure={false}
+          outlineBoolOverview={false}
+          outlineBoolStructure={true}
           outlineBoolSurface={false}
-          outlineColor="bg-[#EDA249]"
-          overviewLink="/venus/overview"
-          structureLink="/venus/structure"
-          surfaceLink="/venus/surface"
+          outlineColor="bg-[#1EC1A2]"
+          overviewLink="/uranus/overview"
+          structureLink="/uranus/structure"
+          surfaceLink="/uranus/surface"
         />
       </div>
     </div>
     <div
       class="mt-[28px] ml-[32px] md:mt-0 md:ml-0 md:flex md:w-full md:justify-center lg:justify-center lg:mt-0"
     >
-      <Card title="rotation time" data={data[1].rotation} />
-      <Card title="revolution time" data={data[1].revolution} />
-      <Card title="radius" data={data[1].radius} />
-      <Card title="average temp." data={data[1].temperature} />
+      <Card title="rotation time" data={data[6].rotation} />
+      <Card title="revolution time" data={data[6].revolution} />
+      <Card title="radius" data={data[6].radius} />
+      <Card title="average temp." data={data[6].temperature} />
     </div>
   </section>
 </Layout>

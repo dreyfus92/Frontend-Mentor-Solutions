@@ -45,7 +45,7 @@
         font-weight: 700;
       }
       body {
-        animation: fadeInAnimation ease 0.7s;
+        animation: fadeInAnimation ease 0.3s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
       }

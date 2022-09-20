@@ -1,12 +1,12 @@
 ---
 const navItems = [
-  "VENUS",
-  "EARTH",
-  "MARS",
-  "JUPITER",
-  "SATURN",
-  "URANUS",
-  "NEPTUNE",
+  { name: "VENUS", color: "decoration-[#EDA249]" },
+  { name: "EARTH", color: "decoration-[#6D2ED5]" },
+  { name: "MARS", color: "decoration-[#D14C32]" },
+  { name: "JUPITER", color: "decoration-[#D83A34]" },
+  { name: "SATURN", color: "decoration-[#CD5120]" },
+  { name: "URANUS", color: "decoration-[#1EC1A2]" },
+  { name: "NEPTUNE", color: "decoration-[#2D68F0]" },
 ];
 ---
 
@@ -18,12 +18,30 @@ const navItems = [
     class="md:flex md:gap-x-[33px] md:w-full md:justify-center lg:flex lg:gap-[33px] lg:w-[665px] lg:mr-[40px] hidden"
   >
     <a href="/">
-      <p class="text-[#FFFFFF] text-[11px]">MERCURY</p>
+      <p
+        class={Astro.url.pathname === "/" ||
+        Astro.url.pathname === "/structure" ||
+        Astro.url.pathname === "/surface"
+          ? `underline decoration-4 decoration-[#2D68F0] underline-offset-[-45px] text-[#FFFFFF] text-[11px]`
+          : "text-[#FFFFFF] text-[11px]"}
+      >
+        MERCURY
+      </p>
     </a>
     {
-      navItems.map((planet) => (
-        <a href={`/${planet.toLowerCase()}/overview`}>
-          <p class="text-[#FFFFFF] text-[11px]">{planet}</p>
+      navItems.map(({ name, color }) => (
+        <a href={`/${name.toLowerCase()}/overview`}>
+          <p
+            class={
+              Astro.url.pathname === `/${name.toLocaleLowerCase()}/overview` ||
+              Astro.url.pathname === `/${name.toLocaleLowerCase()}/structure` ||
+              Astro.url.pathname === `/${name.toLocaleLowerCase()}/surface`
+                ? `underline decoration-4 ${color} underline-offset-[-45px] text-[#FFFFFF] text-[11px]`
+                : "text-[#FFFFFF] text-[11px]"
+            }
+          >
+            {name}
+          </p>
         </a>
       ))
     }

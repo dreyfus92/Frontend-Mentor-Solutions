@@ -2,7 +2,9 @@
 import { navItems } from "./navItems";
 ---
 
-<div class="absolute right-0 bottom-0 z-10 bg-[#070724] w-full h-[75vh]">
+<div
+  class="absolute right-0 bottom-0 z-10 bg-[#070724] w-full h-[75vh] md:hidden lg:hidden xl:hidden"
+>
   <a href="/">
     <p
       class={Astro.url.pathname === "/" ||

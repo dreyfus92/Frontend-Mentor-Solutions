@@ -8,15 +8,15 @@ const { title, data } = Astro.props;
 ---
 
 <div
-  class="flex md:flex-col md:w-[164px] md:h-[88px] md:mb-0 w-[327px] h-[48px] justify-around md:justify-center border-[1px] border-[#38384F] mb-[8px] md:text-left md:mr-[11px] items-center md:items-start lg:w-[255px] lg:h-[128px]"
+  class="flex md:flex-col md:w-[164px] md:h-[88px] md:mb-0 w-[327px] h-[48px] justify-between md:justify-center border-[1px] border-[#38384F] mb-[8px] md:text-left md:mr-[11px] items-center md:items-start lg:w-[255px] lg:h-[128px]"
 >
   <p
-    class="text-[#838391] text-[8px] mr-[135px] md:mr-0 md:mb-[12px] md:ml-[15px] lg:text-[11px] lg:mb-[30px]"
+    class="text-[#838391] ml-[24px] text-[8px] md:mb-[12px] md:ml-[15px] lg:text-[11px] lg:mb-[30px]"
   >
     {title.toUpperCase()}
   </p>
   <h1
-    class="text-[20px] md:ml-[15px] md:text-[24px] md:leading-[6px] md:mb-[19px] lg:text-[40px]"
+    class="text-[20px] mr-[24px] md:ml-[15px] md:text-[24px] md:leading-[6px] md:mb-[19px] lg:text-[40px]"
   >
     {data.toUpperCase()}
   </h1>

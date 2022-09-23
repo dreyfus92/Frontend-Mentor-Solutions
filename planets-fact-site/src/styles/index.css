@@ -44,8 +44,9 @@
         font-family: "Spartan", sans-serif;
         font-weight: 700;
       }
+
       body {
-        animation: fadeInAnimation ease 0.3s;
+        animation: fadeInAnimation ease 0.7s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
       }

@@ -1,0 +1,34 @@
+---
+import { navItems } from "./navItems";
+---
+
+<div class="absolute right-0 bottom-0 z-10 bg-[#070724] w-full h-[75vh]">
+  <a href="/">
+    <p
+      class={Astro.url.pathname === "/" ||
+      Astro.url.pathname === "/structure" ||
+      Astro.url.pathname === "/surface"
+        ? `underline decoration-4 decoration-[#2D68F0] underline-offset-[-45px] text-[#FFFFFF] text-[11px]`
+        : "text-[#FFFFFF] text-[11px] hover:underline hover:decoration-4 hover:decoration-[#2D68F0] hover:underline-offset-[-45px]"}
+    >
+      MERCURY
+    </p>
+  </a>
+  {
+    navItems.map(({ name, color, hover }) => (
+      <a href={`/${name.toLowerCase()}/overview`}>
+        <p
+          class={
+            Astro.url.pathname === `/${name.toLocaleLowerCase()}/overview` ||
+            Astro.url.pathname === `/${name.toLocaleLowerCase()}/structure` ||
+            Astro.url.pathname === `/${name.toLocaleLowerCase()}/surface`
+              ? `underline decoration-4 ${color} underline-offset-[-45px] text-[#FFFFFF] text-[11px]`
+              : `text-[#FFFFFF] text-[11px] ${hover}`
+          }
+        >
+          {name}
+        </p>
+      </a>
+    ))
+  }
+</div>

@@ -4,6 +4,7 @@ export const navItems = [
       color: "decoration-[#EDA249]",
       hover:
         "hover:underline hover:decoration-4 hover:decoration-[#EDA249] hover:underline-offset-[-45px]",
+      fill: "fill-[#F7CC7F]"
     },
     {
       name: "EARTH",

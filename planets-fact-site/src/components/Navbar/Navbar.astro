@@ -39,8 +39,12 @@ import MobileNavbar from "./MobileNavbar.astro";
       ))
     }
   </div>
-  <button class="mr-[24px] md:hidden lg:hidden xl:hidden"
-    ><img
+  <button
+    data-collapse-toggle="dropdownNavbar"
+    type="button"
+    class="mr-[24px] md:hidden lg:hidden xl:hidden"
+  >
+    <img
       src="/assets/icon-hamburger.svg"
       alt="hamburger-icon"
       class="focus:fill-[#979797]"

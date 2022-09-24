@@ -28,11 +28,16 @@ import { navItems } from "./navItems";
             class="flex justify-between items-center mb-5"
           >
             <div class="flex items-center">
-              <img
-                src="/assets/Oval.svg"
-                alt="oval"
-                class={`ml-[24px] ${fill}`}
-              />
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="ml-[24px]"
+              >
+                <circle cx="10" cy="10" r="10" fill={fill} />
+              </svg>
               <p class="ml-[25px]">{name}</p>
             </div>
             <img

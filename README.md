@@ -15,6 +15,7 @@ All projects are hosted on Vercel and Netlify.
 | QR code component              | Astro JS, TailwindCSS         | [Repo](https://github.com/dreyfus92/Frontend-Mentor-Solution/tree/main/qr-code-component)                   | [Live](https://630918056c102b052560f613--rococo-gumption-6c8b05.netlify.app/) |
 | 3 column preview component     | Astro JS, TailwindCSS         | [Repo](https://github.com/dreyfus92/Frontend-Mentor-Solution/tree/main/3-column-preview-card-component)     | [Live](https://joyful-cassata-5513ed.netlify.app/)                            |
 | Tip Calculator App             | React JS, TailwindCSS, ViteJS | [Repo](https://github.com/dreyfus92/Frontend-Mentor-Solution/tree/main/tip-calculator-app)                  | [Live](https://exquisite-faun-1cdeb5.netlify.app/)                            |
+| Planets Fact Site              | Astro JS, TailwindCSS         | [Repo](https://github.com/dreyfus92/Frontend-Mentor-Solutions/tree/main/planets-fact-site)                  | [Live](https://mellow-shortbread-aeb26d.netlify.app/)                            |
 
 
 

@@ -16,13 +16,8 @@ const Home: NextPage = () => {
       <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
         <div className="grid grid-cols-1 gap-y-[24px]">
           {data.map(({ name, images }, index) => (
-            <Image
-              key={index}
-              src={images.thumbnail}
-              alt={name}
-              height="100%"
-              width="100%"
-            />
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={index} src={images.thumbnail} alt={name} />
           ))}
         </div>
       </main>

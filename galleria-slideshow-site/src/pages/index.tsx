@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import data from "../lib/data.json";
-import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 import { Navbar } from "../components/Navbar";
 
 const Home: NextPage = () => {
@@ -14,10 +14,15 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
-        <div className="grid grid-cols-1 gap-y-[24px]">
+        <div className="grid grid-cols-1 gap-y-[23px]">
           {data.map(({ name, images }, index) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={index} src={images.thumbnail} alt={name} />
+            <Link
+              key={index}
+              href={`/paint/${name.replace(/\s/g, "").toLowerCase()}`}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={images.thumbnail} alt={name} />
+            </Link>
           ))}
         </div>
       </main>

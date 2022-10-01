@@ -26,11 +26,8 @@ const Home: NextPage = ({
       <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
         <div className="grid grid-cols-1 gap-y-[23px]">
           {allPaintsData.map(
-            ({ name, images }: PaintDetailProps, index: number) => (
-              <Link
-                key={index}
-                href={`/paints/${name.replace(/\s/g, "").toLowerCase()}`}
-              >
+            ({ name, images, id }: PaintDetailProps, index: number) => (
+              <Link key={index} href={`/paints/${id}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={images.thumbnail} alt={name} />
               </Link>

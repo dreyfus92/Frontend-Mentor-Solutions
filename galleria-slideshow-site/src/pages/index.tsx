@@ -1,10 +1,20 @@
-import type { NextPage } from "next";
-import data from "../lib/data.json";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import { PaintDetailProps, paints } from "../data/data";
 import Head from "next/head";
 import Link from "next/link";
 import { Navbar } from "../components/Navbar";
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      allPaintsData: paints,
+    },
+  };
+};
+
+const Home: NextPage = ({
+  allPaintsData,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -15,15 +25,17 @@ const Home: NextPage = () => {
       <Navbar />
       <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
         <div className="grid grid-cols-1 gap-y-[23px]">
-          {data.map(({ name, images }, index) => (
-            <Link
-              key={index}
-              href={`/paint/${name.replace(/\s/g, "").toLowerCase()}`}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={images.thumbnail} alt={name} />
-            </Link>
-          ))}
+          {allPaintsData.map(
+            ({ name, images }: PaintDetailProps, index: number) => (
+              <Link
+                key={index}
+                href={`/paints/${name.replace(/\s/g, "").toLowerCase()}`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={images.thumbnail} alt={name} />
+              </Link>
+            )
+          )}
         </div>
       </main>
     </>

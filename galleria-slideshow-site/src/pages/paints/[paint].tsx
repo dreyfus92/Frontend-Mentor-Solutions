@@ -1,39 +1,20 @@
-import { useRouter } from "next/router";
-import data from "../../lib/data.json";
 import Head from "next/head";
-import { Navbar } from "../components/Navbar";
+import { paints } from "../../data/data";
+import { Navbar } from "../../components/Navbar";
+import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
 
-export type PaintsData = Root[];
-
-export interface Root {
-  name: string;
-  year: number;
-  description: string;
-  source: string;
-  artist: Artist;
-  images: Images;
-}
-
-export interface Artist {
-  image: string;
-  name: string;
-}
-
-export interface Images {
-  thumbnail: string;
-  hero: Hero;
-  gallery: string;
-}
-
-export interface Hero {
-  small: string;
-  large: string;
-}
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      allPaintsData: paints,
+    },
+  };
+};
 
 const Paint = () => {
   const router = useRouter();
-  const { pid } = router.query;
-
+  const { name } = router.query;
   return (
     <>
       <Head>
@@ -43,7 +24,7 @@ const Paint = () => {
       </Head>
       <Navbar />
       <main>
-        <h1>This the page for {pid}</h1>
+        <h1>This the page for {name}</h1>
       </main>
     </>
   );

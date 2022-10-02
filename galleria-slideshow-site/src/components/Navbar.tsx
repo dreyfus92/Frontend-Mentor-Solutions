@@ -16,9 +16,9 @@ export const Navbar = () => {
           />
         </Link>
       </div>
-      <button className="text-[9px] text-[#7D7D7D] mr-[24px]">
-        START SLIDESHOW
-      </button>
+      <Link href={"/paints/1"}>
+        <a className="text-[9px] text-[#7D7D7D] mr-[24px]">START SLIDESHOW</a>
+      </Link>
     </nav>
   );
 };

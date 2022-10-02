@@ -1,7 +1,15 @@
 import Head from "next/head";
 import { paints } from "../../data/data";
 import { Navbar } from "../../components/Navbar";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { BottomBar } from "../../components/BottomBar";
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = paints.map((paint) => ({
+    params: { id: paint.id.toString() },
+  }));
+  return { paths, fallback: false };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const paint = paints.filter((p) => p.id.toString() === params?.id);
@@ -10,13 +18,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       allPaintsData: paint[0],
     },
   };
-};
-
-export const getStaticPaths = async () => {
-  const paths = paints.map((paint) => ({
-    params: { id: paint.id.toString() },
-  }));
-  return { paths, fallback: false };
 };
 
 const Paint = ({
@@ -31,8 +32,17 @@ const Paint = ({
       </Head>
       <Navbar />
       <main>
-        <h1>This the page for {allPaintsData.description}</h1>
+        <div className="relative">
+          <img src={allPaintsData.images.thumbnail} alt={allPaintsData.name} />
+          <h1 className="absolute bottom-0">{allPaintsData.name}</h1>
+          <p>{allPaintsData.artist.name}</p>
+        </div>
+        <h1>This the page for {allPaintsData.name}</h1>
       </main>
+      <BottomBar
+        nameOfPaint={allPaintsData.name}
+        artist={allPaintsData.artist.name}
+      />
     </>
   );
 };

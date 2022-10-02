@@ -23,13 +23,27 @@ const Home: NextPage = ({
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
       <Navbar />
-      <main className="container mx-auto flex flex-col items-center justify-center min-h-screen p-4">
-        <div className="grid grid-cols-1 gap-y-[23px]">
+      <main className="container mx-auto flex flex-col items-center justify-center min-h-screen">
+        <div className="my-[24px] grid grid-cols-1 gap-y-[23px] grid">
           {allPaintsData.map(
-            ({ name, images, id }: PaintDetailProps, index: number) => (
+            ({ name, images, id, artist }: PaintDetailProps, index: number) => (
               <Link key={index} href={`/paints/${id}`}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={images.thumbnail} alt={name} />
+                <div className="relative">
+                  <img src={images.thumbnail} alt={name} />
+                  <div
+                    id="fade-layer"
+                    className="absolute bottom-0 left-0 w-[327px] h-[170px] flex items-end"
+                  >
+                    <div className="text-white ml-[32px] mb-[33px] w-[246px]">
+                      <h2 className="font-bold text-[24px] leading-[30px]">
+                        {name}
+                      </h2>
+                      <p className="text-[13px] leading-[16px] opacity-75 mt-[6px]">
+                        {artist.name}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </Link>
             )
           )}

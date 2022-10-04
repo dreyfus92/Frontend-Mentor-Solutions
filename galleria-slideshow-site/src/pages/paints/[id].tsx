@@ -2,6 +2,7 @@ import Head from "next/head";
 import { paints } from "../../data/data";
 import { Navbar } from "../../components/Navbar";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { BottomBar } from "../../components/BottomBar";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = paints.map((paint) => ({
@@ -30,7 +31,7 @@ const Paint = ({
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
       <Navbar />
-      <main className="container mt-[24px] mx-auto flex flex-col items-center min-h-screen">
+      <main className="container mt-[24px] mb-[123px] mx-auto flex flex-col items-center min-h-screen">
         <div className="relative w-[327px]">
           <img src={allPaintsData.images.hero.small} alt={allPaintsData.name} />
           <div className="absolute w-[280px] h-[104px] bg-white -bottom-[52px] flex flex-col items-start justify-center">
@@ -48,6 +49,7 @@ const Paint = ({
           <p className="text-[#7D7D7D] text-[14px] leading-[28px] mt-[74px]">{allPaintsData.description}</p>
         </div>
       </main>
+      <BottomBar nameOfPaint={allPaintsData.name} artist={allPaintsData.artist.name}/>
     </>
   );
 };

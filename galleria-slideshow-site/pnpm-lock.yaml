@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@fontsource/libre-baskerville': ^4.5.9
+  '@headlessui/react': ^1.7.3
   '@types/node': 18.0.0
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
@@ -20,6 +21,7 @@ specifiers:
 
 dependencies:
   '@fontsource/libre-baskerville': 4.5.9
+  '@headlessui/react': 1.7.3_biqbaboplfbrettd7655fr4n2y
   next: 12.3.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -74,6 +76,17 @@ packages:
 
   /@fontsource/libre-baskerville/4.5.9:
     resolution: {integrity: sha512-MqOET8uA4dEqwpP14EmDNh3mY3XI+CBIW0FPZowPO0mXaf5trs1ieq5dGv6tdLXJN/yopJuHtsAsHLqAmJHtqw==}
+    dev: false
+
+  /@headlessui/react/1.7.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-LGp06SrGv7BMaIQlTs8s2G06moqkI0cb0b8stgq7KZ3xcHdH3qMP+cRyV7qe5x4XEW/IGY48BW4fLesD6NQLng==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.10.5:

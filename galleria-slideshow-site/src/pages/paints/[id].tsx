@@ -1,8 +1,9 @@
 import Head from "next/head";
 import { paints } from "../../data/data";
 import { Navbar } from "../../components/Navbar";
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { Modal } from "../../components/Modal";
 import { BottomBar } from "../../components/BottomBar";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = paints.map((paint) => ({
@@ -34,6 +35,7 @@ const Paint = ({
       <main className="container mt-[24px] mb-[123px] mx-auto flex flex-col items-center min-h-screen">
         <div className="relative w-[327px]">
           <img src={allPaintsData.images.hero.small} alt={allPaintsData.name} />
+          <Modal />
           <div className="absolute w-[280px] h-[104px] bg-white -bottom-[52px] flex flex-col items-start justify-center">
             <div className="ml-[24px]">
               <h2 className="text-[24px] leading-[29px]">
@@ -44,12 +46,25 @@ const Paint = ({
           </div>
         </div>
         <div className="relative mt-[98px] w-[327px]">
-          <img src={allPaintsData.artist.image} width="64" height="64" alt={allPaintsData.artist.name} className="absolute -top-[46px]"/>
-          <h1 className="absolute -top-[25px] right-[10px] text-[100px] text-[#F3F3F3] -z-10">{allPaintsData.year}</h1>
-          <p className="text-[#7D7D7D] text-[14px] leading-[28px] mt-[74px]">{allPaintsData.description}</p>
+          <img
+            src={allPaintsData.artist.image}
+            width="64"
+            height="64"
+            alt={allPaintsData.artist.name}
+            className="absolute -top-[46px]"
+          />
+          <h1 className="absolute -top-[25px] right-[10px] text-[100px] text-[#F3F3F3] -z-10">
+            {allPaintsData.year}
+          </h1>
+          <p className="text-[#7D7D7D] text-[14px] leading-[28px] mt-[74px]">
+            {allPaintsData.description}
+          </p>
         </div>
       </main>
-      <BottomBar nameOfPaint={allPaintsData.name} artist={allPaintsData.artist.name}/>
+      <BottomBar
+        nameOfPaint={allPaintsData.name}
+        artist={allPaintsData.artist.name}
+      />
     </>
   );
 };

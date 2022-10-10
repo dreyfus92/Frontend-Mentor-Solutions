@@ -35,7 +35,10 @@ const Paint = ({
       <main className="container mt-[24px] mb-[123px] mx-auto flex flex-col items-center min-h-screen">
         <div className="relative w-[327px]">
           <img src={allPaintsData.images.hero.small} alt={allPaintsData.name} />
-          <Modal />
+          <Modal
+            imgSrc={allPaintsData.images.thumbnail}
+            imgAlt={allPaintsData.name}
+          />
           <div className="absolute w-[280px] h-[104px] bg-white -bottom-[52px] flex flex-col items-start justify-center">
             <div className="ml-[24px]">
               <h2 className="text-[24px] leading-[29px]">

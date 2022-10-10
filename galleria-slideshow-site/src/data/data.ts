@@ -329,3 +329,5 @@ export const paints: ArrayOfPaints = [
     },
   },
 ];
+
+export const paintsLength = paints.length;

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center h-[79px] border-b-[1px] border-[#E5E5E5]">
+    <nav className="sticky top-0 bg-white z-10 flex justify-between items-center h-[79px] border-b-[1px] border-[#E5E5E5]">
       <div className="ml-[24px]">
         <Link href="/">
           <Image

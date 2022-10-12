@@ -60,9 +60,8 @@ const Paint = ({
   const desiredWidth = Math.ceil(
     (allPaintsData.id / paintsLength) * useWindowSize()
   );
-
+  console.log(paintsLength);
   const tailwindWidth = `w-[${desiredWidth}px]`;
-  console.log(tailwindWidth);
   return (
     <>
       <Head>
@@ -115,7 +114,7 @@ const Paint = ({
       {/*BottomBar*/}
       <div className="relative h-[72px] border-t-[1px] border-[#E5E5E5] flex items-center justify-between">
         <div
-          className={`absolute top-0 h-[1px] ${tailwindWidth} bg-red-600`}
+          className={`absolute top-0 h-[2px] ${tailwindWidth} bg-red-600`}
         ></div>
         <div className="ml-[24px]">
           <p className="text-[14px] leading-[17px]">{allPaintsData.name}</p>

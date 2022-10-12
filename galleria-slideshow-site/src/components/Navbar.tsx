@@ -1,8 +1,13 @@
 import logo from "../../public/shared/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { router } from "next/client";
 
-export const Navbar = () => {
+interface NavProps {
+  home: boolean;
+}
+
+export const Navbar = ({ home }: NavProps) => {
   return (
     <nav className="sticky top-0 bg-white z-10 flex justify-between items-center h-[79px] border-b-[1px] border-[#E5E5E5]">
       <div className="ml-[24px]">
@@ -16,9 +21,15 @@ export const Navbar = () => {
           />
         </Link>
       </div>
-      <Link href={"/paints/1"}>
-        <a className="text-[9px] text-[#7D7D7D] mr-[24px]">START SLIDESHOW</a>
-      </Link>
+      {home ? (
+        <Link href={"/paints/1"}>
+          <a className="text-[9px] text-[#7D7D7D] mr-[24px]">START SLIDESHOW</a>
+        </Link>
+      ) : (
+        <Link href={"/"}>
+          <a className="text-[9px] text-[#7D7D7D] mr-[24px]">STOP SLIDESHOW</a>
+        </Link>
+      )}
     </nav>
   );
 };

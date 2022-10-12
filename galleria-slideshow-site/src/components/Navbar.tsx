@@ -1,13 +1,10 @@
 import logo from "../../public/shared/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { router } from "next/client";
+import { useRouter } from "next/router";
 
-interface NavProps {
-  home: boolean;
-}
-
-export const Navbar = ({ home }: NavProps) => {
+export const Navbar = () => {
+  const routeChecker = useRouter();
   return (
     <nav className="sticky top-0 bg-white z-10 flex justify-between items-center h-[79px] border-b-[1px] border-[#E5E5E5]">
       <div className="ml-[24px]">
@@ -21,7 +18,7 @@ export const Navbar = ({ home }: NavProps) => {
           />
         </Link>
       </div>
-      {home ? (
+      {routeChecker.pathname === "/" ? (
         <Link href={"/paints/1"}>
           <a className="text-[9px] text-[#7D7D7D] mr-[24px]">START SLIDESHOW</a>
         </Link>

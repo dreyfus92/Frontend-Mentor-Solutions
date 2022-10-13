@@ -23,12 +23,12 @@ const Home: NextPage = ({
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
       <Navbar />
-      <main className="container mx-auto flex flex-col items-center justify-center min-h-screen">
-        <div className="my-[24px] grid grid-cols-1 gap-y-[23px] grid">
+      <main className="flex justify-center">
+        <div className="columns-1 my-[23px] md:columns-2 md:my-[40px]">
           {allPaintsData.map(
             ({ name, images, id, artist }: PaintDetailProps, index: number) => (
               <Link key={index} href={`/paints/${id}`}>
-                <div className="relative">
+                <div className="relative first-of-type:mt-0 first-of-type:mb-[24px] md:first-of-type:mb-[40px] mx-0 my-[24px] md:mx-[10px] md:my-[40px]">
                   <img src={images.thumbnail} alt={name} />
                   <div
                     id="fade-layer"

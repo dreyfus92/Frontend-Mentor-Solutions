@@ -4,17 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { Navbar } from "../components/Navbar";
 
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      allPaintsData: paints,
-    },
-  };
-};
-
-const Home: NextPage = ({
-  allPaintsData,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -23,12 +13,12 @@ const Home: NextPage = ({
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
       <Navbar />
-      <main className="flex justify-center">
-        <div className="columns-1 my-[23px] md:columns-2 md:my-[40px]">
-          {allPaintsData.map(
+      <main>
+        <div className="columns-4">
+          {paints.map(
             ({ name, images, id, artist }: PaintDetailProps, index: number) => (
               <Link key={index} href={`/paints/${id}`}>
-                <div className="relative first-of-type:mt-0 first-of-type:mb-[24px] md:first-of-type:mb-[40px] mx-0 my-[24px] md:mx-[10px] md:my-[40px]">
+                <div className="relative hover:opacity-75">
                   <img src={images.thumbnail} alt={name} />
                   <div
                     id="fade-layer"

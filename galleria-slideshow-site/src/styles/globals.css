@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body { font-family: "Libre Baskerville", serif; }
+body {
+    font-family: "Libre Baskerville", serif;
+}
 
-#fade-layer{
-background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.841672) 100%);
+#fade-layer {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.841672) 100%);
 }

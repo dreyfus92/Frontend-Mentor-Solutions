@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           {paints.map(
             ({ name, images, id, artist }: PaintDetailProps, index: number) => (
               <Link key={index} href={`/paints/${id}`}>
-                <div className="relative mx-[24px] mb-[24px] last:mb-0 hover:opacity-75">
+                <div className="relative mx-[24px] mb-[24px] last:mb-0 hover:opacity-75 md:mx-[14px]">
                   <img src={images.thumbnail} alt={name} />
                   <div
                     id="fade-layer"

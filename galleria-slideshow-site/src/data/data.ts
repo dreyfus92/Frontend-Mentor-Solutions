@@ -249,6 +249,26 @@ export const paints: ArrayOfPaints = [
     },
   },
   {
+    id: 11,
+    name: "The Basket of Apples",
+    year: 1893,
+    description:
+      "The Basket of Apples (French: Le panier de pommes) is a still life oil painting by French artist Paul Cézanne, which he created c. 1893. The painting is particularly remarkable for its creative composition, which rejected realistic representation in favour of distorting objects to create multiple perspectives. This approach eventually influenced other art movements, including Fauvism and Cubism. It belongs to the Helen Birch Bartlett Memorial Collection of the Art Institute of Chicago.",
+    source: "https:/en.wikipedia.org/wiki/The_Basket_of_Apples",
+    artist: {
+      image: "/the-basket-of-apples/artist.jpg",
+      name: "Paul Cézanne",
+    },
+    images: {
+      thumbnail: "/the-basket-of-apples/thumbnail.jpg",
+      hero: {
+        small: "/the-basket-of-apples/hero-small.jpg",
+        large: "/the-basket-of-apples/hero-large.jpg",
+      },
+      gallery: "/the-basket-of-apples/gallery.jpg",
+    },
+  },
+  {
     id: 15,
     name: "The Swing",
     year: 1767,
@@ -269,26 +289,25 @@ export const paints: ArrayOfPaints = [
     },
   },
   {
-    id: 11,
-    name: "The Basket of Apples",
-    year: 1893,
+    id: 13,
+    name: "Arnolfini Portrait",
+    year: 1434,
     description:
-      "The Basket of Apples (French: Le panier de pommes) is a still life oil painting by French artist Paul Cézanne, which he created c. 1893. The painting is particularly remarkable for its creative composition, which rejected realistic representation in favour of distorting objects to create multiple perspectives. This approach eventually influenced other art movements, including Fauvism and Cubism. It belongs to the Helen Birch Bartlett Memorial Collection of the Art Institute of Chicago.",
-    source: "https:/en.wikipedia.org/wiki/The_Basket_of_Apples",
+      "It is considered one of the most original and complex paintings in Western art, because of its beauty, complex iconography, geometric orthogonal perspective, and expansion of the picture space with the use of a mirror. According to Ernst Gombrich \"in its own way it was as new and revolutionary as Donatello's or Masaccio's work in Italy. A simple corner of the real world had suddenly been fixed on to a panel as if by magic ... For the first time in history the artist became the perfect eye-witness in the truest sense of the term\".",
+    source: "https:/en.wikipedia.org/wiki/Arnolfini_Portrait",
     artist: {
-      image: "/the-basket-of-apples/artist.jpg",
-      name: "Paul Cézanne",
+      image: "/arnolfini-portrait/artist.jpg",
+      name: "Jan van Eyck",
     },
     images: {
-      thumbnail: "/the-basket-of-apples/thumbnail.jpg",
+      thumbnail: "/arnolfini-portrait/thumbnail.jpg",
       hero: {
-        small: "/the-basket-of-apples/hero-small.jpg",
-        large: "/the-basket-of-apples/hero-large.jpg",
+        small: "/arnolfini-portrait/hero-small.jpg",
+        large: "/arnolfini-portrait/hero-large.jpg",
       },
-      gallery: "/the-basket-of-apples/gallery.jpg",
+      gallery: "/arnolfini-portrait/gallery.jpg",
     },
   },
-
   {
     id: 14,
     name: "Mona Lisa",
@@ -307,26 +326,6 @@ export const paints: ArrayOfPaints = [
         large: "/mona-lisa/hero-large.jpg",
       },
       gallery: "/mona-lisa/gallery.jpg",
-    },
-  },
-  {
-    id: 13,
-    name: "Arnolfini Portrait",
-    year: 1434,
-    description:
-      "It is considered one of the most original and complex paintings in Western art, because of its beauty, complex iconography, geometric orthogonal perspective, and expansion of the picture space with the use of a mirror. According to Ernst Gombrich \"in its own way it was as new and revolutionary as Donatello's or Masaccio's work in Italy. A simple corner of the real world had suddenly been fixed on to a panel as if by magic ... For the first time in history the artist became the perfect eye-witness in the truest sense of the term\".",
-    source: "https:/en.wikipedia.org/wiki/Arnolfini_Portrait",
-    artist: {
-      image: "/arnolfini-portrait/artist.jpg",
-      name: "Jan van Eyck",
-    },
-    images: {
-      thumbnail: "/arnolfini-portrait/thumbnail.jpg",
-      hero: {
-        small: "/arnolfini-portrait/hero-small.jpg",
-        large: "/arnolfini-portrait/hero-large.jpg",
-      },
-      gallery: "/arnolfini-portrait/gallery.jpg",
     },
   },
 ];

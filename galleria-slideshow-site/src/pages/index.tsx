@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar />
       <main className="flex items-center justify-center my-[24px] md:my-[40px]">
-        <Plock breakpoints={breakpoints} debounce={10}>
+        <Plock breakpoints={breakpoints} debounce={10} gap="0px">
           {paints.map(
             ({ name, images, id, artist }: PaintDetailProps, index: number) => (
               <Link key={index} href={`/paints/${id}`}>

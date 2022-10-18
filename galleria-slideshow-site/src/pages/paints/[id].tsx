@@ -73,7 +73,11 @@ const Paint = ({
         <div className="relative w-[327px]">
           <img src={allPaintsData.images.hero.small} alt={allPaintsData.name} />
           <Modal
-            imgSrc={allPaintsData.images.thumbnail}
+            imgSrc={
+              useWindowSize() > 767
+                ? allPaintsData.images.gallery
+                : allPaintsData.images.thumbnail
+            }
             imgAlt={allPaintsData.name}
           />
           <div className="absolute w-[280px] h-[104px] bg-white -bottom-[52px] flex flex-col items-start justify-center">

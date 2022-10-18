@@ -69,9 +69,16 @@ const Paint = ({
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
       <Navbar />
-      <main className="container mt-[24px] mb-[207px] mx-auto flex flex-col items-center min-h-screen">
-        <div className="relative w-[327px]">
-          <img src={allPaintsData.images.hero.small} alt={allPaintsData.name} />
+      <main className="container mt-[24px] mb-[207px] mx-auto md:mt-[40px] md:mb-[0px] flex flex-col items-center min-h-screen md:">
+        <div className="relative w-[327px] md:w-[475px]">
+          <img
+            src={
+              useWindowSize() > 767
+                ? allPaintsData.images.hero.large
+                : allPaintsData.images.hero.small
+            }
+            alt={allPaintsData.name}
+          />
           <Modal
             imgSrc={
               useWindowSize() > 767

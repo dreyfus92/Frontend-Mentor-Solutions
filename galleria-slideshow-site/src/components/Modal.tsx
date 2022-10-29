@@ -21,7 +21,7 @@ export const Modal = ({ imgSrc, imgAlt }: ModalProps) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="absolute bg-blend-normal top-[17px] left-[16px] md:top-[440px] bg-[#000000] text-white flex items-center opacity-75 py-[14px] px-[16px]"
+        className="absolute bg-blend-normal top-[17px] left-[16px] md:top-[490px] bg-[#000000] text-white flex items-center opacity-75 py-[14px] px-[16px]"
       >
         <img
           src="/shared/icon-view-image.svg"

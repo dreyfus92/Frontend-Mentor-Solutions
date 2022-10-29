@@ -69,7 +69,7 @@ const Paint = ({
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
       <Navbar />
-      <main className="container mt-[24px] mb-[207px] mx-auto md:mt-[40px] md:mb-[0px] flex flex-col items-center min-h-screen md:">
+      <main className="container mt-[24px] mb-[207px] mx-auto md:mt-[40px] md:mb-[0px] flex flex-col items-center md:items-start min-h-screen md:">
         <div className="relative w-[327px] md:w-[475px]">
           <img
             src={
@@ -87,12 +87,12 @@ const Paint = ({
             }
             imgAlt={allPaintsData.name}
           />
-          <div className="absolute w-[280px] h-[104px] bg-white -bottom-[52px] flex flex-col items-start justify-center">
-            <div className="ml-[24px]">
-              <h2 className="text-[24px] leading-[29px] font-bold">
+          <div className="absolute bg-blue-400 w-[280px] h-[104px] md:w-[445px] md:h-fit -bottom-[52px] md:-top-[1px] md:-right-[213px] flex flex-col items-start justify-center">
+            <div className="ml-[24px] md:ml-[65px]">
+              <h2 className="text-[24px] md:text-[56px] leading-[29px] md:leading-[64px] md:w-[360px] font-bold">
                 {allPaintsData.name}
               </h2>
-              <p className="text-[#7D7D7D] text-[15px] mt-[8px]">
+              <p className="text-[#7D7D7D] text-[15px] mt-[8px] md:mt-[24px] pb-[43px]">
                 {allPaintsData.artist.name}
               </p>
             </div>
@@ -104,12 +104,12 @@ const Paint = ({
             width="64"
             height="64"
             alt={allPaintsData.artist.name}
-            className="absolute -top-[46px]"
+            className="absolute -top-[46px] md:-top-[422px] md:-right-[305px] md:w-[128px]"
           />
           <h1 className="absolute -top-[25px] right-[10px] text-[100px] text-[#F3F3F3] -z-10">
             {allPaintsData.year}
           </h1>
-          <p className="text-[#7D7D7D] text-[14px] font-bold leading-[28px] mt-[74px] mb-[40px]">
+          <p className="text-[#7D7D7D] text-[14px] font-bold leading-[28px] mt-[74px] mb-[40px] md:ml-[155px] md:w-[457px] bg-blue-200">
             {allPaintsData.description}
           </p>
           <a

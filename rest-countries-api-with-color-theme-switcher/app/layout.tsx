@@ -1,4 +1,7 @@
 import "./globals.css";
+import "@fontsource/nunito/300.css";
+import "@fontsource/nunito/600.css";
+import "@fontsource/nunito/800.css";
 
 export default function RootLayout({
   children,

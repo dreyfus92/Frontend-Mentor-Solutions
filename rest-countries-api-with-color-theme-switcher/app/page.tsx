@@ -7,6 +7,7 @@ import dynamic from "next/dynamic";
 export default function Home() {
   const router = useRouter();
   const [countries, setCountries] = useState([]);
+  const [searchCountry, setSearchCountry] = useState("");
 
   /**
    * Function to get all countries
@@ -36,16 +37,38 @@ export default function Home() {
 
   return (
     <>
-      <nav className="bg-[#FFFFFF] flex justify-around box-shadow">
-        <h2>Where in the world?</h2>
+      <nav className="bg-[#FFFFFF] flex items-center justify-around box-shadow h-[80px]">
+        <h2 className="">Where in the world?</h2>
         <button className="flex items-center">
           <img src="/moon.svg" alt="moon-icon" />
           Dark Mode
         </button>
       </nav>
-      <main className="container flex justify-center">
+      <main className="container flex flex-col items-center my-[24px]">
         {/** SearchBar Component*/}
+        <div className="box-shadow ">
+          <img
+            src="./mgIcon.svg"
+            alt="magnifying-glass-icon"
+            className="absolute bottom-4 left-[33px]"
+          />
+          <input
+            placeholder="Search for a country..."
+            className="w-[343px] h-[48px] text-center"
+            type="text"
+            onChange={(e) => setSearchCountry(e.target.value)}
+          />
+        </div>
         {/*OptionBar Component*/}
+        <div>
+          <select name="region" id="region">
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
         {/*Card Component*/}
         <div className="grid grid-cols-1 gap-y-[40px]">
           {countries.map((country, index) => (
@@ -58,7 +81,7 @@ export default function Home() {
                 alt="flag"
                 className="rounded-t-[5px]"
               />
-              <h1 className="font-['Nunito'] font-bold font-size mt-[24px] ml-[24px]">
+              <h1 className="font-['Nunito'] text-[18px] font-bold font-size mt-[24px] ml-[24px]">
                 {country.name.common}
               </h1>
               <div className="mt-[16px] ml-[24px]">

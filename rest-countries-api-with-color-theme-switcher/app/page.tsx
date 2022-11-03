@@ -24,9 +24,7 @@ export default function Home() {
    */
 
   const getSingleCountry = async () => {
-    const response = await fetch(
-      "https://restcountries.com/v3.1/name/" + country
-    );
+    const response = await fetch("https://restcountries.com/v3.1/name/");
     const data = await response.json();
     console.log(data);
   };
@@ -37,6 +35,7 @@ export default function Home() {
 
   return (
     <>
+      {/*Navbar*/}
       <nav className="bg-[#FFFFFF] flex items-center justify-around box-shadow h-[80px]">
         <h2 className="">Where in the world?</h2>
         <button className="flex items-center">
@@ -44,9 +43,9 @@ export default function Home() {
           Dark Mode
         </button>
       </nav>
-      <main className="container flex flex-col items-center my-[24px]">
+      <main className="container flex flex-col items-start my-[24px]">
         {/** SearchBar Component*/}
-        <div className="box-shadow ">
+        <div className="box-shadow">
           <img
             src="./mgIcon.svg"
             alt="magnifying-glass-icon"
@@ -60,8 +59,17 @@ export default function Home() {
           />
         </div>
         {/*OptionBar Component*/}
-        <div>
-          <select name="region" id="region">
+        <div className="box-shadow mt-[40px]">
+          <select
+            name="region"
+            id="region"
+            className="w-[240px] h-[48px]"
+            placeholder="Filter By Region"
+            defaultValue={"DEFAULT"}
+          >
+            <option value="DEFAULT" disabled>
+              Filter By Region
+            </option>
             <option value="Africa">Africa</option>
             <option value="Americas">Americas</option>
             <option value="Asia">Asia</option>

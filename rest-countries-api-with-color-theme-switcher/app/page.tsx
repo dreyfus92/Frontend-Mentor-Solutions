@@ -2,12 +2,25 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
+import Navbar from "./components/Navbar";
+import { Root2 } from "./lib/types";
+import { getAllCountries } from "./lib/helpers";
 
 export default function Home() {
   const router = useRouter();
   const [countries, setCountries] = useState([]);
   const [searchCountry, setSearchCountry] = useState("");
+  const [region, setRegion] = useState([]);
+
+  /**
+   * Function to get a single country
+   */
+
+  const getSingleCountry = async () => {
+    const response = await fetch("https://restcountries.com/v3.1/name/");
+    const data = await response.json();
+    console.log(data);
+  };
 
   /**
    * Function to get all countries
@@ -20,13 +33,15 @@ export default function Home() {
   };
 
   /**
-   * Function to get a single country
+   * Function to filter countries by region
    */
 
-  const getSingleCountry = async () => {
-    const response = await fetch("https://restcountries.com/v3.1/name/");
-    const data = await response.json();
-    console.log(data);
+  const filterCountriesByRegion = (value) => {
+    const filteredCountries = countries.filter(
+      (countries) => countries.region === value
+    );
+    console.log(filteredCountries);
+    setRegion(filteredCountries);
   };
 
   useEffect(() => {
@@ -36,13 +51,7 @@ export default function Home() {
   return (
     <>
       {/*Navbar*/}
-      <nav className="bg-[#FFFFFF] flex items-center justify-around box-shadow h-[80px]">
-        <h2 className="">Where in the world?</h2>
-        <button className="flex items-center">
-          <img src="/moon.svg" alt="moon-icon" />
-          Dark Mode
-        </button>
-      </nav>
+      <Navbar />
       <main className="container flex flex-col items-start my-[24px]">
         {/** SearchBar Component*/}
         <div className="box-shadow">
@@ -66,6 +75,7 @@ export default function Home() {
             className="w-[240px] h-[48px]"
             placeholder="Filter By Region"
             defaultValue={"DEFAULT"}
+            onChange={(e) => filterCountriesByRegion(e.target.value)}
           >
             <option value="DEFAULT" disabled>
               Filter By Region
@@ -79,7 +89,7 @@ export default function Home() {
         </div>
         {/*Card Component*/}
         <div className="grid grid-cols-1 gap-y-[40px]">
-          {countries.map((country, index) => (
+          {countries.map((country: Root2, index) => (
             <div
               key={index}
               className="box-shadow w-[264px] h-[336px] rounded-t-[5px]"

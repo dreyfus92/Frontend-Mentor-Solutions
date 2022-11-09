@@ -29,6 +29,7 @@ export default function Home() {
   const getAllCountries = async () => {
     const response = await fetch("https://restcountries.com/v3.1/all");
     const data = await response.json();
+    console.log(data);
     setCountries(data);
   };
 
@@ -68,7 +69,7 @@ export default function Home() {
           />
         </div>
         {/*OptionBar Component*/}
-        <div className="box-shadow mt-[40px]">
+        <div className="box-shadow mt-[40px] mb-[40px]">
           <select
             name="region"
             id="region"
@@ -89,35 +90,65 @@ export default function Home() {
         </div>
         {/*Card Component*/}
         <div className="grid grid-cols-1 gap-y-[40px]">
-          {countries.map((country: Root2, index) => (
-            <div
-              key={index}
-              className="box-shadow w-[264px] h-[336px] rounded-t-[5px]"
-            >
-              <img
-                src={country.flags.svg}
-                alt="flag"
-                className="rounded-t-[5px]"
-              />
-              <h1 className="font-['Nunito'] text-[18px] font-bold font-size mt-[24px] ml-[24px]">
-                {country.name.common}
-              </h1>
-              <div className="mt-[16px] ml-[24px]">
-                <p className="font-light">
-                  <strong>Population: </strong>
-                  {country.population}
-                </p>
-                <p className="font-light">
-                  <strong>Region: </strong>
-                  {country.region}
-                </p>
-                <p className="font-light">
-                  <strong>Capital: </strong>
-                  {country.capital}
-                </p>
-              </div>
-            </div>
-          ))}
+          {region.length == 0
+            ? countries.map((country: Root2, index) => (
+                <div
+                  key={index}
+                  className="box-shadow w-[264px] h-[336px] rounded-t-[5px]"
+                >
+                  <img
+                    src={country.flags.svg}
+                    alt="flag"
+                    className="rounded-t-[5px]"
+                  />
+                  <h1 className="font-['Nunito'] text-[18px] font-bold font-size mt-[24px] ml-[24px]">
+                    {country.name.common}
+                  </h1>
+                  <div className="mt-[16px] ml-[24px]">
+                    <p className="font-light">
+                      <strong>Population: </strong>
+                      {country.population}
+                    </p>
+                    <p className="font-light">
+                      <strong>Region: </strong>
+                      {country.region}
+                    </p>
+                    <p className="font-light">
+                      <strong>Capital: </strong>
+                      {country.capital}
+                    </p>
+                  </div>
+                </div>
+              ))
+            : region.map((country: Root2, index) => (
+                <div
+                  key={index}
+                  className="box-shadow w-[264px] h-[336px] rounded-t-[5px]"
+                >
+                  <img
+                    src={country.flags.svg}
+                    alt="flag"
+                    className="rounded-t-[5px]"
+                  />
+                  <h1 className="font-['Nunito'] text-[18px] font-bold font-size mt-[24px] ml-[24px]">
+                    {country.name.common}
+                  </h1>
+                  <div className="mt-[16px] ml-[24px]">
+                    <p className="font-light">
+                      <strong>Population: </strong>
+                      {country.population}
+                    </p>
+                    <p className="font-light">
+                      <strong>Region: </strong>
+                      {country.region}
+                    </p>
+                    <p className="font-light">
+                      <strong>Capital: </strong>
+                      {country.capital}
+                    </p>
+                  </div>
+                </div>
+              ))}
         </div>
       </main>
     </>

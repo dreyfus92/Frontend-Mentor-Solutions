@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "./components/Navbar";
 import { Root2 } from "./lib/types";
-import { getAllCountries } from "./lib/helpers";
 
 export default function Home() {
   const router = useRouter();

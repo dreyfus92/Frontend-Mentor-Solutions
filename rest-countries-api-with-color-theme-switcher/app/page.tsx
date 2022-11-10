@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "./components/Navbar";
-import type { Root2 } from "./lib/types";
 import Card from "./components/Card";
+import type { Root2 } from "./lib/types";
 
 export default function Home() {
   const router = useRouter();
@@ -29,7 +29,6 @@ export default function Home() {
   const getAllCountries = async () => {
     const response = await fetch("https://restcountries.com/v3.1/all");
     const data = await response.json();
-    console.log(data);
     setCountries(data);
   };
 
@@ -41,7 +40,17 @@ export default function Home() {
     const filteredCountries = countries.filter(
       (countries: Root2) => countries.region === value
     );
-    console.log(filteredCountries);
+    setRegion(filteredCountries);
+  };
+
+  /**
+   * Function to filter countries by name
+   */
+
+  const filterCountriesByName = (value: string) => {
+    const filteredCountries = countries.filter(
+      (countries: Root2) => countries.name.common === value
+    );
     setRegion(filteredCountries);
   };
 
@@ -53,11 +62,11 @@ export default function Home() {
     <>
       {/*Navbar*/}
       <Navbar />
-      <main className="container flex flex-col items-start my-[24px]">
+      <main className="container flex flex-col items-center my-[24px]">
         {/** SearchBar Component*/}
         <div className="box-shadow">
           <img
-            src="./mgIcon.svg"
+            src="/mgIcon.svg"
             alt="magnifying-glass-icon"
             className="absolute bottom-4 left-[33px]"
           />
@@ -73,7 +82,8 @@ export default function Home() {
           <select
             name="region"
             id="region"
-            className="w-[240px] h-[48px]"
+            className="w-[240px] h-[48px] appearance-none block px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            aria-label="Default select example"
             placeholder="Filter By Region"
             defaultValue={"DEFAULT"}
             onChange={(e) => filterCountriesByRegion(e.target.value)}

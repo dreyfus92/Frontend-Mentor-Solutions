@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "./components/Navbar";
-import { Root2 } from "./lib/types";
+import type { Root2 } from "./lib/types";
+import Card from "./components/Card";
 
 export default function Home() {
   const router = useRouter();
@@ -36,9 +37,9 @@ export default function Home() {
    * Function to filter countries by region
    */
 
-  const filterCountriesByRegion = (value) => {
+  const filterCountriesByRegion = (value: string) => {
     const filteredCountries = countries.filter(
-      (countries) => countries.region === value
+      (countries: Root2) => countries.region === value
     );
     console.log(filteredCountries);
     setRegion(filteredCountries);
@@ -91,62 +92,10 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-y-[40px]">
           {region.length == 0
             ? countries.map((country: Root2, index) => (
-                <div
-                  key={index}
-                  className="box-shadow w-[264px] h-[336px] rounded-t-[5px]"
-                >
-                  <img
-                    src={country.flags.svg}
-                    alt="flag"
-                    className="rounded-t-[5px]"
-                  />
-                  <h1 className="font-['Nunito'] text-[18px] font-bold font-size mt-[24px] ml-[24px]">
-                    {country.name.common}
-                  </h1>
-                  <div className="mt-[16px] ml-[24px]">
-                    <p className="font-light">
-                      <strong>Population: </strong>
-                      {country.population}
-                    </p>
-                    <p className="font-light">
-                      <strong>Region: </strong>
-                      {country.region}
-                    </p>
-                    <p className="font-light">
-                      <strong>Capital: </strong>
-                      {country.capital}
-                    </p>
-                  </div>
-                </div>
+                <Card country={country} key={index} />
               ))
             : region.map((country: Root2, index) => (
-                <div
-                  key={index}
-                  className="box-shadow w-[264px] h-[336px] rounded-t-[5px]"
-                >
-                  <img
-                    src={country.flags.svg}
-                    alt="flag"
-                    className="rounded-t-[5px]"
-                  />
-                  <h1 className="font-['Nunito'] text-[18px] font-bold font-size mt-[24px] ml-[24px]">
-                    {country.name.common}
-                  </h1>
-                  <div className="mt-[16px] ml-[24px]">
-                    <p className="font-light">
-                      <strong>Population: </strong>
-                      {country.population}
-                    </p>
-                    <p className="font-light">
-                      <strong>Region: </strong>
-                      {country.region}
-                    </p>
-                    <p className="font-light">
-                      <strong>Capital: </strong>
-                      {country.capital}
-                    </p>
-                  </div>
-                </div>
+                <Card country={country} key={index} />
               ))}
         </div>
       </main>

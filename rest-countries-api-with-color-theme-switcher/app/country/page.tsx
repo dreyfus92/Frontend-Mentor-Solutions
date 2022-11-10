@@ -1,9 +1,7 @@
-export default function Page() {
+export default function Country() {
   return (
-    <>
-      <div>
-        <h1>Country</h1>
-      </div>
-    </>
+    <div>
+      <h1>Country</h1>
+    </div>
   );
 }
